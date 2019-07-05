@@ -1,0 +1,44 @@
+.navigation-container {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.icon-image {
+  margin-top: 2px;
+  width: 28px;
+  height: 28px;
+}
+a {
+  color: #778899;
+  text-decoration: none;
+}
+
+.icon-text {
+  font-family: Regular;
+  transform: translateY(-2px);
+}
+
+.icon-image-feed {
+  margin-top: 2px;
+}
+
+.icon-text-feed {
+  font-family: Regular;
+  transform: translateY(-2px) translateX(-3px);
+
+}
+.icon-image-explore {
+  margin-top: 2px;
+
+}
+.afterClicked {
+  color: #2D4A86;
+  font-size: 18px;
+  transform: translateY(-2px);
+}
+.growicon {
+  transform: scale(1.15) translateY(2px);
+
+}

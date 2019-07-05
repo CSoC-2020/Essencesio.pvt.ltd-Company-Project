@@ -1,0 +1,70 @@
+<mat-sidenav-container
+    class="example-container" (backdropClick)="close('backdrop')" >
+  <mat-sidenav #sidenav
+    (keydown.escape)="close('escape')"
+   disableClose [autoFocus]="false" >
+
+    <div class="row" >
+      <div class="col-xs-2 col-sm-2 text-center" >
+          <a (click)="close('toggle button')"
+            *ngIf="DisplayCategories && SearchInputEmpty && !inputInSecondarySearch">
+            <img class="toggle-bar " src="assets\RepeatGrid12.svg">
+          </a>
+          <a
+            (click)="close('toggle button')"
+            *ngIf="!DisplayCategories || inputInSecondarySearch">
+            <img class="back-icon " src="assets\Repeat Grid 13.svg">
+          </a>
+      </div>
+    <div class="col-xs-8 col-sm-9" *ngIf="DisplayCategories && SearchInputEmpty && !inputInSecondarySearch">
+      <input type="text" class="firstInput" placeholder="Search..."
+        (focusin) = "focusoutHandler($event)"
+        (focusout) = "focusinHandler($event)"
+        (keyup)="onKey($event)"
+    >
+    </div>
+    <div class="col-xs-2 col-sm-2" *ngIf="DisplayCategories && SearchInputEmpty && !inputInSecondarySearch">
+      <a><img src="assets\final-1.png" class="profile " alt=""></a>
+    </div>
+    <div class="col-sm-10 col-xs-9" *ngIf="!DisplayCategories || inputInSecondarySearch ">
+      <div class="Searchbar">
+       <input type="text" placeholder="Search..."
+          (focusin) = "focusoutHandler($event)" (focusout) = "focusinHandler($event)"
+          (keyup)="onKeySecond($event)" class="secondSearchbar"   appCustomAutoFocus #reference>
+        <a (click)="reference.value=''; inputFocus();">  <img src="assets\RepeatGrid12.svg" alt="" class="cancelSearch" > </a>
+      </div>
+    </div>
+  </div>
+
+<hr>
+
+<p></p>
+
+<app-categories *ngIf="DisplayCategories && SearchInputEmpty"></app-categories>
+  </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="nav-bar">
+        <div class="row" style="height: 56px !important;">
+          <div class="nav-background" >
+            <div class="row" style="height: 56px !important;">
+              <div class="col-xs-2 com-sm-2 ">
+                  <a (click)="sidenav.open()" class="toggle-bar" ><img src="assets\Repeat Grid 11.svg" alt=""  class="toggle-bar"></a>
+              </div>
+              <div class="col-xs-8 col-sm-8 " style="height: 56px !important;">
+                <h1 class="text-center tittle">STOPNC</h1>
+              </div>
+              <div class="col-xs-0 col-sm-2"></div>
+              <div class="com-xs-2  ">
+                <a><img src="assets/Nortification.svg" class="nortification pull-right"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <app-bottom-nav></app-bottom-nav>
+      </mat-sidenav-content>
+
+</mat-sidenav-container>
+

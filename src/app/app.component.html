@@ -1,0 +1,5 @@
+<!-- only gets loaded for scrrensize greater than 992px -->
+<app-desktop class="no-margin" *ngIf="innerWidth >= 992"></app-desktop>
+
+<!-- only gets loaded for screen size less than 992px -->
+<app-mobile *ngIf="innerWidth <= 991"></app-mobile>

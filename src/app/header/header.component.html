@@ -1,0 +1,100 @@
+<div class="row">
+    <div class="side-panel col-md-3 hidden-xs hidden-sm">
+      <div class="row" style="margin-top: 15px;">
+      <div class="col-md-6">
+        <div class="text-center">
+        <a style="text-decoration: none;">
+          <img src="assets\Path 1.svg" class= ""alt=""><br>
+          <p class="nav-text-2">Casual</p>
+        </a>
+      </div>
+      <div class="text-center">
+          <a style="text-decoration: none;">
+            <img src="assets\Path 3.svg" class= ""alt=""><br>
+            <p class="nav-text-2">Formal</p>
+          </a>
+        </div>
+      <div class="text-center">
+          <a style="text-decoration: none;">
+            <img src="assets\Path 5.svg" class= ""alt=""><br>
+            <p class="nav-text-2">Date</p>
+          </a>
+      </div>
+        <div class="text-center">
+            <a style="text-decoration: none;">
+              <img src="assets\Path 7.svg" class= ""alt=""><br
+              ><p class="nav-text-2">Sports</p>
+            </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-center">
+            <a style="text-decoration: none;">
+              <img src="assets\Path 2.svg" alt=""><br>
+              <p class="nav-text-2">Outdoor</p>
+            </a>
+        </div>
+        <div class="text-center">
+            <a style="text-decoration: none;">
+              <img src="assets\Path 4.svg" alt=""><br>
+              <p class="nav-text-2">Clubing</p>
+            </a>
+        </div>
+        <div class="text-center">
+            <a style="text-decoration: none;">
+              <img src="assets\Path 6.svg" alt="" ><br>
+              <p class="nav-text-2">Travel</p>
+            </a>
+        </div>
+        <div class="text-center ">
+            <a style="text-decoration: none;">
+              <img src="assets\Path 8.svg" alt="" style="transform: translateY(20px);"><br>
+              <p class="nav-text-2 " style="transform: translateY(30px);">Accessories</p>
+            </a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+  <div class=" main-panel col-md-9 col-sm-12 col-xs-12" >
+    <div *ngIf="userLogin" class="row " style="margin-top: 15px; transform: translateX(-60px);">
+      <div class="col-md-8">
+        <div class="col-md-4">
+            <p class="nav-text text-center"><a class="nav-link">HOME</a></p>
+        </div>
+        <div class="col-md-4">
+            <p class="nav-text text-center"><a class="nav-link">FEED</a></p>
+        </div>
+        <div class="col-md-4">
+            <p class="nav-text text-center"><a class="nav-link">DISCOVER</a></p>
+        </div>
+      </div>
+      <div class="col-md-4" >
+        <div class="col-md-6">
+          <input type="text" placeholder="Search...">
+          </div>
+        <div class="col-md-3">
+          <img src="assets\Nortification.svg" alt="" class="text-right nortification">
+        </div>
+        <div class="col-md-3">
+            <img src="assets\final-1.png" alt="" class="text-right profile">
+        </div>
+      </div>
+    </div>
+    <div class="loginButton" *ngIf="!userLogin">
+     <a class="loginLink" style="cursor: pointer" (click)="Login();">LOGIN</a>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-10">
+        <h1 class="text-left main-title">STOPNC</h1>
+        <br>
+        <p class = "text-left main-slogan">Style your Everyday Life</p>
+
+      </div>
+    </div>
+  </div>
+
+</div>

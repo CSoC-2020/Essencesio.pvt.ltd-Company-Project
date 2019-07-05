@@ -1,0 +1,141 @@
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+
+}
+.firstInput{
+  position: relative;
+  margin-top: 20px;
+  background: transparent;
+  border: solid #2D4A86 3px;
+  border-radius: 25px;
+  padding-left: 15px;
+  font-family: Regular;
+  color: #2D4A86;
+  padding-top: 5px;
+  font-size: 15px;
+  padding-right: 15px;
+
+
+
+}
+input:focus{
+  outline: none;
+  background: transparent;
+}
+.cancelSearch {
+  margin-right: 8px;
+  margin-top: 2px;
+  position: absolute;
+  right: 0px;
+  width: 20px;
+  height: 20px;
+
+
+}
+.secondSearchbar {
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-family: Regular;
+  font-size: 20px;
+
+}
+.Searchbar {
+  padding-top: 5px;
+  padding-left: 20px;
+  margin-top: 20px;
+  position: relative;
+  border: #2D4A86 solid 3px;
+  border-radius: 25px;
+
+}
+
+hr {
+  border: #2D4A86 solid 2px;
+}
+mat-sidenav {
+  width: 100%;
+  background-color: #F7F6F9;
+  overflow-x: hidden !important;
+
+}
+.toggle-bar {
+  margin-top: 20px ;
+}
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.nav-background {
+  height: 56px;
+  background-color: #33AAAE;
+}
+.tittle {
+  font-family: Enhance;
+  color: #2D4A86;
+  margin-top: 15px;
+}
+.back-icon {
+  margin-top:25px;
+  transform: rotate(180deg);
+  width: 30px;
+  height: 30px;
+}
+
+.nortification {
+  margin-top: 13px;
+  height: 35px;
+  padding-right: 10px;
+}
+
+.profile {
+  height: 40px;
+  margin-top: 16px;
+
+}
+.nav-bar {
+  position: fixed !important;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+  width: 100%;
+
+
+}
+
+@media screen and (max-width: 500px) {
+  .profile {
+    transform: translateX(-15px);
+  }
+}
+  @media screen and (max-width: 370px) {
+    .profile {
+      transform: translateX(-10px);
+    }
+
+  }
+
+
+  @media  (min-width: 600px) and (max-width: 930px) {
+    .profile {
+      transform: translateX(0px);
+    }
+
+  }
+  @media screen and (max-width: 360px) {
+    input {
+      transform: translateX(-10px);
+    }
+  }
+  app-bottom-nav {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color:#F7F6F9;
+    height: 53px;
+    box-shadow: 10px 10px 8px 10px #888888;
+  }
