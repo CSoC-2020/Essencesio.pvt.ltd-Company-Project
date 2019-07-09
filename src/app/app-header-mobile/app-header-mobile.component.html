@@ -24,7 +24,10 @@
     >
     </div>
     <div class="col-xs-2 col-sm-2" *ngIf="DisplayCategories && SearchInputEmpty && !inputInSecondarySearch">
-      <a><img src="assets\final-1.png" class="profile " alt=""></a>
+      <a *ngIf="userLogin" ><img src="assets\final-1.png" class="profile " alt=""></a>
+      <div class="loginButton" *ngIf="!userLogin" style="transform: translateY(8px);">
+        <a class="loginLink" style="cursor: pointer" (click)="Login();">LOGIN</a>
+       </div>
     </div>
     <div class="col-sm-10 col-xs-9" *ngIf="!DisplayCategories || inputInSecondarySearch ">
       <div class="Searchbar">
@@ -56,14 +59,17 @@
               </div>
               <div class="col-xs-0 col-sm-2"></div>
               <div class="com-xs-2  ">
-                <a><img src="assets/Nortification.svg" class="nortification pull-right"></a>
+                <a *ngIf="userLogin"><img src="assets/Nortification.svg" class="nortification pull-right"></a>
+                <div class="loginButton" *ngIf="!userLogin">
+                  <a class="loginLink" style="cursor: pointer" (click)="Login();">LOGIN</a>
+                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <app-bottom-nav></app-bottom-nav>
+      <app-bottom-nav *ngIf="userLogin"></app-bottom-nav>
       </mat-sidenav-content>
 
 </mat-sidenav-container>

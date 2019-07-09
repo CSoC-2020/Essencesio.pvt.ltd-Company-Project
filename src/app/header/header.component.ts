@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
       (Login: boolean) => {
         this.userLogin = Login;
       }
-    )
+    );
   }
 
 }

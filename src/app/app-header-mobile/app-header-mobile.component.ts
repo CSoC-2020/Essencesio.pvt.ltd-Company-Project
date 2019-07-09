@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatSidenav } from '@angular/material';
 import {Input} from '@angular/core';
+import { LoginService } from '../login.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mobile',
@@ -9,7 +11,13 @@ import {Input} from '@angular/core';
   styleUrls: ['./app-header-mobile.component.css']
 })
 export class AppHeaderMobileComponent implements OnInit {
-  constructor() { }
+  userLogin: boolean;
+  private loginUpdate: Subscription;
+
+  constructor(private loginService: LoginService) {
+
+    this.userLogin = loginService.getLoginStatus();
+  }
   reason = '';
   // Checks if Input Tag is in focus
   DisplayCategories = true;
@@ -33,6 +41,11 @@ export class AppHeaderMobileComponent implements OnInit {
     this.nameField.nativeElement.focus();
     this.SearchInputEmpty = true;
     this.inputInSecondarySearch = false;
+  }
+
+  close(reason: string) {
+    this.reason = reason;
+    this.sidenav.close();
   }
 
   onHide(val: boolean) {
@@ -102,14 +115,23 @@ export class AppHeaderMobileComponent implements OnInit {
         }
       }
   ngOnInit() {
+    this.userLogin = this.loginService.getLoginStatus();
+    this.loginUpdate = this.loginService.getLoginUpdateListener().subscribe(
+      (Login: boolean) => {
+        this.userLogin = Login;
+      }
+    );
+  }
+
+  Login() {
+    this.userLogin = true;
+    console.log(this.userLogin);
+
   }
 
 
 
-  close(reason: string) {
-    this.reason = reason;
-    this.sidenav.close();
-  }
+
 
 }
 
