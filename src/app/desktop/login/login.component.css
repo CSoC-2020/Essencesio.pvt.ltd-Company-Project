@@ -1,0 +1,129 @@
+.background {
+  background: url(../../../assets/loginbackground.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.container {
+  background-color: #33AAAE;
+    box-shadow: -10px 10px 6px #888;
+    border-radius: 4px;
+    padding-top: 20px;
+    width: 700px;
+    position: absolute;
+    bottom: initial;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 10%;
+}
+.header {
+  text-align: center;
+  font-family: Enhance;
+  font-size: 60px;
+  color: #2D4A86;
+}
+.info {
+  text-align: center;
+  font-family: Regular;
+  color: #F7F6F9;
+  font-size: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.login-buttons {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  height: auto;
+}
+button {
+  margin: auto;
+  width: 100%;
+}
+.social-icon-facebook {
+  float: left;
+  height: 35px;
+  transform: translateY(-7px) translateX(2px);
+}
+.facebook-button {
+  background-color: #3F51B5;
+  border: none;
+  border-radius: 25px;
+  padding: 5px;
+}
+.button-text-facebook {
+  font-family: Regular;
+  font-size: 15px;
+  color: #F7F6F9;
+}
+.butn {
+  display:table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+.google-button {
+  background-color: #F8E8E9;
+  border: none;
+  border-radius: 25px;
+  padding: 5px;
+}
+.social-icon-google {
+  float: left;
+  height: 25px;
+  transform: translateY(-2px) translateX(7px);
+
+}
+.button-text-google {
+  font-family: Regular;
+  font-size: 15px;
+  color: #3028F0;
+}
+a {
+  text-decoration: none;
+}
+.email-button {
+  background-color: #F8E8E9;
+  border: none;
+  border-radius: 25px;
+  padding: 5px;
+}
+.social-icon-email {
+  float: left;
+  height: 20px;
+  transform:  translateX(6px) translateY(1px);
+}
+.button-text-email {
+  font-family: Regular;
+  font-size: 15px;
+  color: #2D4A86;
+}
+hr {
+  margin-bottom: 5px;
+}
+.bottom-conatainer {
+  display: flex;
+  justify-content: center;
+}
+.extra-info {
+  margin: 0px 30px 5px 30px;
+}
+.extra-info-text {
+  font-family: Regular;
+  font-size: 20px;
+  color: #2D4A86;
+}
+hr {
+  border: solid 1px #F8E8E9;
+  border-radius: 25px;
+}
+.cancel-icon {
+  text-align: right;
+  margin-right: 5px;
+}

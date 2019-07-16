@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-desktop',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./desktop.component.css']
 })
 export class DesktopComponent implements OnInit {
-
-  constructor() { }
+  currentRoute: Router;
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.currentRoute = this.router;
   }
 
 }

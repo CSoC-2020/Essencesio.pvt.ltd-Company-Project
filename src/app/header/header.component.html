@@ -83,7 +83,7 @@
       </div>
     </div>
     <div class="loginButton" *ngIf="!userLogin">
-     <a class="loginLink" style="cursor: pointer" (click)="Login();">LOGIN</a>
+     <a class="loginLink" style="cursor: pointer" (click)="Login();" [routerLink]="['/login']" routerLinkActive=""  >LOGIN</a>
     </div>
 
     <div class="row">

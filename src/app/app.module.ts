@@ -18,6 +18,7 @@ import { CustomAutoFocusDirective } from './custom-auto-focus.directive';
 import { BottomNavComponent } from './app-header-mobile/bottom-nav/bottom-nav.component';
 import { DesktopComponent } from './desktop/desktop.component';
 import { HomeComponent } from './desktop/home/home.component';
+import { LoginComponent } from './desktop/login/login.component';
 
 
 
@@ -31,6 +32,7 @@ import { HomeComponent } from './desktop/home/home.component';
     BottomNavComponent,
     DesktopComponent,
     HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
