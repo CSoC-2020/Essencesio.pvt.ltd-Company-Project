@@ -1,0 +1,133 @@
+.background {
+  background: url(../../../../assets/loginbackground.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+.container {
+  background-color: #33AAAE;
+    box-shadow: -10px 10px 6px #888;
+    border-radius: 4px;
+    padding-top: 20px;
+    width: 750px;
+    position: absolute;
+    bottom: initial;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 10%;
+    height: 550px;
+}
+.cancel-icon {
+  text-align: right;
+  margin-right: 5px;
+}
+.header {
+  text-align: center;
+  font-family: Enhance;
+  font-size: 60px;
+  color: #2D4A86;
+}
+.vertical-line {
+  margin: autos;
+  border-left: #2D4A86 solid 6px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  border-radius: 25px;
+  margin-top:25px;
+}
+.main-container {
+  display: inline-block;
+
+}
+.login-container {
+  float: right;
+  transform:  translateY(-20px) translateX(20px);
+
+}
+.signup-container {
+
+  float: left;
+  transform: translateY(-20px);
+}
+.title {
+  font-family: Enhance;
+  color: #2D4A86;
+
+}
+.text {
+
+  font-family: Regular;
+  color: #2D4A86;
+  font-size: 17px;
+}
+.side-text {
+
+  margin-right: 90px;
+}
+input {
+  border: none;
+  border-radius: 25px;
+  padding-left: 8px;
+  font-family: Regular;
+  color: #5D5D5D;
+  font-size: 15px;
+  border: 1px solid #5D5D5D;
+
+}
+.second-input {
+  transform: translateX(35px);
+
+}
+.name-input {
+  width: 155px;
+
+}
+.email-input {
+  width: 345px
+}
+.terms {
+  width: 354px;
+
+}
+.terms-text {
+  font-family: Regular;
+  color: #2D4A86;
+}
+.signup-button {
+  background: #2D4A86;
+  color: #F7F6F9;
+  font-family: Regular;
+  border-radius: 25px;
+  padding: 5px;
+  text-align: center;
+  width: 100px;
+}
+.button {
+  display: flex;
+  justify-content: flex-end;
+  width: 340px;
+}
+.cancel-button {
+  background: transparent;
+  border: 2px solid #2D4A86;
+  color: #2D4A86;
+  font-family: Regular;
+  border-radius: 25px;
+  padding: 3px;
+  text-align: center;
+  width: 100px;
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+}
+.forgot:hover {
+  text-decoration: underline;
+}

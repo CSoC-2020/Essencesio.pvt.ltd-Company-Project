@@ -1,6 +1,6 @@
 <div class="background">
   <div class="container">
-    <div class="cancel-icon"><a href=""><img src="assets\RepeatGrid12.svg" alt=""></a></div>
+    <div class="cancel-icon"><a [routerLink]="['/']" routerLinkActive="" ><img src="assets\RepeatGrid12.svg" alt=""></a></div>
     <h1 class="header">JOIN STOPNC</h1>
     <br>
     <p class="info">
@@ -11,29 +11,40 @@
     <br>
     <br>
     <div class="login-buttons">
+        <a >
       <div class="facebook-button">
-       <a >
+
          <img src="assets\facebook.svg" alt="" class="social-icon-facebook"> <span class="button-text-facebook">CONTINUE WITH FACEBOOK</span>
-       </a>
+
       </div>
+    </a>
     </div>
     <br>
     <div class="login-buttons">
+        <a >
       <div class="google-button">
-       <a >
+
          <img src="assets\google.svg" alt="" class="social-icon-google"> <span class="button-text-google">CONTINUE WITH GOOGLE</span>
-       </a>
+
       </div>
+    </a>
     </div>
     <br>
     <div class="login-buttons">
+        <a [routerLink]="['./email']" routerLinkActive="router-link-active" >
       <div class="email-button">
-       <a >
+
          <img src="assets\message.svg" alt="" class="social-icon-email"> <span class="button-text-email">CONTINUE WITH EMAIL</span>
-       </a>
+
       </div>
+    </a>
     </div>
+
 <br>
+<div class="text">
+  <p class="terms">By continuing you indicate that you have read and agree to STOPNCs Terms of Service and Privacy Policy.
+  </p>
+</div>
 <hr>
     <div class="bottom-conatainer">
       <div class="extra-info">

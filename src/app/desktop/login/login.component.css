@@ -127,3 +127,10 @@ hr {
   text-align: right;
   margin-right: 5px;
 }
+.text {
+  width: 400px;
+  text-align: center;
+  margin: auto;
+  font-family: Regular;
+  color: #2D4A86;
+}

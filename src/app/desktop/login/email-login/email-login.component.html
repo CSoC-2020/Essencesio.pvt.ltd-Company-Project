@@ -1,0 +1,74 @@
+<div class="background">
+  <div class="container">
+    <div class="cancel-icon"><a [routerLink]="['/']" routerLinkActive="" ><img src="assets\RepeatGrid12.svg" alt=""></a></div>
+    <h1 class="header">JOIN STOPNC</h1>
+    <br>
+    <div class="main-container ">
+
+      <div class="signup-container ">
+          <h3 class="title">SIGNUP</h3>
+          <div class="username-text-login">
+            <span class="text side-text">FIRST NAME</span> <span class="text">LAST NAME</span>
+          </div>
+          <div class="input-field">
+            <span><input type="text" class="name-input"></span>            <span><input type="text" class="second-input name-input"></span>
+          </div>
+          <br>
+          <span class="text email-text">EMAIL</span>
+          <div class="input-field">
+            <input type="email" class="email-input">
+          </div>
+          <br>
+          <span class="text email-text">PASSWORD</span>
+          <div class="input-field">
+            <input type="password" class="email-input">
+          </div>
+          <br>
+          <div class="terms">
+            <p class="terms-text">
+                By clicking "Sign Up" you indicate that you have read and agree to STOPNCs Terms of Service and Privacy Policy.
+            </p>
+          </div>
+          <div class="button">
+              <a [routerLink]="['/login']"  >
+                <div class="cancel-button">
+                  CANCEL
+                </div>
+              </a>
+              <a>
+                 <div class="signup-button">
+                    SIGNUP
+                  </div>
+                </a>
+            </div>
+      </div>
+
+      <div class="vertical-line " ></div>
+      <div class="login-container ">
+          <h3 class="title">LOGIN</h3>
+          <span class="text email-text">EMAIL</span>
+          <div class="input-field">
+            <input type="email" class="email-input">
+          </div>
+          <br>
+          <span class="text email-text">PASSWORD</span>
+          <div class="input-field">
+            <input type="password" class="email-input">
+          </div>
+          <br>
+          <div>
+            <a class="text forgot" >Forgot Password ?</a>
+          </div>
+          <br>
+          <div class="button">
+            <a>
+              <div class="signup-button">
+                 LOGIN
+               </div>
+             </a>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>

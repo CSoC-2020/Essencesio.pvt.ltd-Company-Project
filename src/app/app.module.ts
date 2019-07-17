@@ -19,6 +19,7 @@ import { BottomNavComponent } from './app-header-mobile/bottom-nav/bottom-nav.co
 import { DesktopComponent } from './desktop/desktop.component';
 import { HomeComponent } from './desktop/home/home.component';
 import { LoginComponent } from './desktop/login/login.component';
+import { EmailLoginComponent } from './desktop/login/email-login/email-login.component';
 
 
 
@@ -33,6 +34,7 @@ import { LoginComponent } from './desktop/login/login.component';
     DesktopComponent,
     HomeComponent,
     LoginComponent,
+    EmailLoginComponent,
   ],
   imports: [
     BrowserModule,
