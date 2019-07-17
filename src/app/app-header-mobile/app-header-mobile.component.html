@@ -47,7 +47,7 @@
   </mat-sidenav>
 
     <mat-sidenav-content>
-      <div class="nav-bar">
+      <div class="nav-bar" *ngIf="currentRoute.url !== '/mlogin' && currentRoute.url !== '/m-login/email'">
         <div class="row" style="height: 56px !important;">
           <div class="nav-background" >
             <div class="row" style="height: 56px !important;">
@@ -61,15 +61,16 @@
               <div class="com-xs-2  ">
                 <a *ngIf="userLogin"><img src="assets/Nortification.svg" class="nortification pull-right"></a>
                 <div class="loginButton" *ngIf="!userLogin">
-                  <a class="loginLink" style="cursor: pointer" (click)="Login();">LOGIN</a>
+                  <a class="loginLink" style="cursor: pointer" (click)="Login();" [routerLink]="'mlogin'"  >LOGIN</a>
                  </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <router-outlet></router-outlet>
 
-      <app-bottom-nav *ngIf="userLogin"></app-bottom-nav>
+      <app-bottom-nav *ngIf="userLogin && currentRoute.url !== '/mlogin' && currentRoute.url !== '/m-login/email'"></app-bottom-nav>
       </mat-sidenav-content>
 
 </mat-sidenav-container>

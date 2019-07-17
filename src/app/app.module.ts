@@ -20,6 +20,7 @@ import { DesktopComponent } from './desktop/desktop.component';
 import { HomeComponent } from './desktop/home/home.component';
 import { LoginComponent } from './desktop/login/login.component';
 import { EmailLoginComponent } from './desktop/login/email-login/email-login.component';
+import { LoginMobileComponent } from './app-header-mobile/login-mobile/login-mobile.component';
 
 
 
@@ -35,6 +36,7 @@ import { EmailLoginComponent } from './desktop/login/email-login/email-login.com
     HomeComponent,
     LoginComponent,
     EmailLoginComponent,
+    LoginMobileComponent,
   ],
   imports: [
     BrowserModule,

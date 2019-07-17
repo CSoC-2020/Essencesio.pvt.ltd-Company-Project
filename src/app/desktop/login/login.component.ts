@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,17 +9,21 @@ import { HostListener } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  screenHeight: any;
+  screenWidth: any;
 
-  constructor() { }
+  constructor(private router: Router) {
+
+  }
 
   ngOnInit() {
     this.getScreenSize();
   }
   @HostListener('window:resize', ['$event'])
     getScreenSize(event?) {
-          this.screenHeight = window.innerHeight;
+          this.screenWidth = window.innerWidth;
+          if (this.screenWidth <= 920) {
+            this.router.navigate(['/mlogin']);
 
-          console.log(this.screenHeight);
+          }
     }
 }

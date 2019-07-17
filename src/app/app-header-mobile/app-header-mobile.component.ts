@@ -4,6 +4,7 @@ import { MatSidenav } from '@angular/material';
 import {Input} from '@angular/core';
 import { LoginService } from '../login.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mobile',
@@ -13,8 +14,9 @@ import { Subscription } from 'rxjs';
 export class AppHeaderMobileComponent implements OnInit {
   userLogin: boolean;
   private loginUpdate: Subscription;
+  currentRoute: Router;
 
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService, private router: Router ) {
 
     this.userLogin = loginService.getLoginStatus();
   }
@@ -115,6 +117,8 @@ export class AppHeaderMobileComponent implements OnInit {
         }
       }
   ngOnInit() {
+    this.currentRoute = this.router;
+
     this.userLogin = this.loginService.getLoginStatus();
     this.loginUpdate = this.loginService.getLoginUpdateListener().subscribe(
       (Login: boolean) => {
