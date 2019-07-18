@@ -1,0 +1,125 @@
+.background {
+  background: url(../../../../assets/loginbackground.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.container {
+  background-color: #33AAAE;
+    box-shadow: -10px 10px 6px #888;
+    border-radius: 4px;
+    padding-top: 10px;
+    width: 300px;
+    position: absolute;
+    bottom: initial;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 10%;
+}
+.cancel-icon {
+
+  text-align: right;
+  margin-right: 2px;
+}
+.cross-image {
+  width: 20px;
+}
+.header {
+  text-align: center;
+  font-family: Enhance;
+  font-size: 30px;
+  color: #2D4A86;
+  margin-bottom: 30px;
+}
+.nav-link {
+  font-family: Regular;
+  font-size: 15px;
+  color: #2D4A86;
+  border-bottom: #2D4A86;
+}
+.nav-tabs > li > a:hover{
+  background-color:  #2D4A86 !important;
+    border: #2D4A86;
+    border-radius: 10px 10px 0px 0px;
+    color:#fff;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+
+.nav-tabs > li > a:active{
+  background-color:  #2D4A86 !important;
+    border: #2D4A86;
+    border-radius: 10px 10px 0px 0px;
+    color:#fff;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  color: #fff;
+  cursor: default;
+  background-color: #2D4A86;
+  border: 1px solid #2D4A86;
+  border-radius: 10px 10px 0px 0px;
+  border-bottom-color: transparent;
+}
+hr {
+  transform: translateY(-20px);
+  border: solid 1px #2D4A86;
+  margin-bottom: 0px;
+
+}
+.text {
+  font-family: Regular;
+  color: #2D4A86;
+}
+input {
+  border: none;
+  border-radius: 25px;
+  padding-left: 8px;
+  font-family: Regular;
+  color: #5D5D5D;
+  font-size: 15px;
+  border: 1px solid #5D5D5D;
+  width: 48%;
+
+}
+.side-text {
+
+  margin-right: 60px;
+}
+.second-input {
+  transform: translateX(12px);
+
+}
+.email-input {
+  width: 100%;
+}
+
+.input-field {
+  margin-bottom: 10px;
+}
+.terms {
+  width: 100%;
+  text-align: center;
+
+}
+.terms-text {
+  font-size: 10px;
+  font-family: Regular;
+  color: #2D4A86;
+}
+.signup-button {
+  background: #2D4A86;
+  color: #F7F6F9;
+  font-family: Regular;
+  border-radius: 25px;
+  padding: 5px;
+  text-align: center;
+  width: 100px;
+  margin: auto;
+  font-size: 17px;
+}

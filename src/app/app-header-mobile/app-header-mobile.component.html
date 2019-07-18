@@ -47,7 +47,7 @@
   </mat-sidenav>
 
     <mat-sidenav-content>
-      <div class="nav-bar" *ngIf="currentRoute.url !== '/mlogin' && currentRoute.url !== '/m-login/email'">
+      <div class="nav-bar" *ngIf="currentRoute.url !== '/mlogin' && currentRoute.url !== '/mlogin/email'">
         <div class="row" style="height: 56px !important;">
           <div class="nav-background" >
             <div class="row" style="height: 56px !important;">
@@ -70,7 +70,7 @@
       </div>
       <router-outlet></router-outlet>
 
-      <app-bottom-nav *ngIf="userLogin && currentRoute.url !== '/mlogin' && currentRoute.url !== '/m-login/email'"></app-bottom-nav>
+      <app-bottom-nav *ngIf="userLogin && currentRoute.url !== '/mlogin' && currentRoute.url !== '/mlogin/email'"></app-bottom-nav>
       </mat-sidenav-content>
 
 </mat-sidenav-container>

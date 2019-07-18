@@ -15,6 +15,7 @@
   padding-top: 5px;
   font-size: 15px;
   padding-right: 15px;
+  width: 90%;
 
 
 
@@ -109,8 +110,8 @@ mat-sidenav {
 }
 .loginButton {
   position: absolute;
-  right: 20px;
-  padding:5px 15px;
+  right: 5px;
+  padding:3px 15px;
   margin-top: 13px;
   background-color: #2D4A86;
   border-radius: 25px;

@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppHeaderMobileComponent } from './app-header-mobile/app-header-mobile.component';
 import { MatToolbarModule, MatButtonModule,
-  MatSidenavModule, MatIconModule, MatListModule, MatCardModule, } from '@angular/material';
+  MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatTabsModule } from '@angular/material';
 import { MatRadioModule } from '@angular/material/radio';
 import { LayoutModule } from '@angular/cdk/layout';
 import { RouterModule } from '@angular/router';
@@ -21,6 +21,7 @@ import { HomeComponent } from './desktop/home/home.component';
 import { LoginComponent } from './desktop/login/login.component';
 import { EmailLoginComponent } from './desktop/login/email-login/email-login.component';
 import { LoginMobileComponent } from './app-header-mobile/login-mobile/login-mobile.component';
+import { EmailLoginMobileComponent } from './app-header-mobile/login-mobile/email-login-mobile/email-login-mobile.component';
 
 
 
@@ -37,6 +38,7 @@ import { LoginMobileComponent } from './app-header-mobile/login-mobile/login-mob
     LoginComponent,
     EmailLoginComponent,
     LoginMobileComponent,
+    EmailLoginMobileComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { LoginMobileComponent } from './app-header-mobile/login-mobile/login-mob
     MatListModule,
     MatCardModule,
     FormsModule,
+    MatTabsModule,
     ReactiveFormsModule,
     MatRadioModule
   ],
