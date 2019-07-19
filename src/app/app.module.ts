@@ -22,6 +22,7 @@ import { LoginComponent } from './desktop/login/login.component';
 import { EmailLoginComponent } from './desktop/login/email-login/email-login.component';
 import { LoginMobileComponent } from './app-header-mobile/login-mobile/login-mobile.component';
 import { EmailLoginMobileComponent } from './app-header-mobile/login-mobile/email-login-mobile/email-login-mobile.component';
+import { UserProfileComponent } from './desktop/user-profile/user-profile.component';
 
 
 
@@ -39,6 +40,7 @@ import { EmailLoginMobileComponent } from './app-header-mobile/login-mobile/emai
     EmailLoginComponent,
     LoginMobileComponent,
     EmailLoginMobileComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

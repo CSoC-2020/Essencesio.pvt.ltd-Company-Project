@@ -46,7 +46,7 @@ input{
 
 .profile {
   position: absolute;
-  right: 2px;
+  right: 10px;
   height: 50px;
   width: 50px;
   transform: translateY(-5px) translateX(58px);
@@ -61,16 +61,19 @@ input{
   color: #ffffff;
 }
 .main-title {
-  font-size: 120px;
+  font-size: 90px;
   color: #2D4A86;
   font-family: Enhance;
   margin-top: 60px;
+  z-index: 2;
 }
 .main-slogan {
   color: #2D4A86;
   font-family: Enhance;
-  font-size: 50px;
+  font-size: 40px;
   transform: translateY(-40px) translateX(0px);
+  z-index: 2;
+
 }
 .loginButton {
   position: absolute;
@@ -87,11 +90,64 @@ input{
   text-decoration: none;
   font-family: Regular
 }
+.dropdown-menu {
+  background-color: #F7F6F9;
+  width: 160px !important;
+  z-index: 1000;
+  position: fixed;
+  left: auto !important;
+  transform: translateX(-40px);
+}
+.main-container {
+  padding: 5px 20px 0px 20px;
+}
+.dropdown-image {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 5px;
+}
+.dropdown-name {
+  padding: 8px;
+}
+.dropdown-line {
+  margin: 0px 0px 5px 0px;
+  border: 1px solid rgba(0,0,0,.12);
+  opacity: 0.3;
+}
+.dropdown-name-text {
+  font-family: Regular;
+  margin: auto;
+  color: #2D4A86;
+  font-size: 17px;
+}
+.blogger-button {
+  padding: 8px;
+}
+.profile-icon {
+  width: 20px;
+}
+.dropdown-list {
+  font-family: Regular;
+  color: #2D4A86;
+  font-size: 15px;
+  /* margin: 0px 0px 5px 10px; */
+}
+.dropdown-list-item {
+  display: flex;
+  padding: 8px;
+  height: 30px;
+}
 @media screen and (min-width: 1300px) {
   input {
-    font-size: 23px;
+    font-size: 18px;
   }
   .nav-text {
     font-size: 30px;
+  }
+  .main-title {
+    font-size: 120px;
+  }
+  .main-slogan {
+    font-size: 50px;
   }
 }

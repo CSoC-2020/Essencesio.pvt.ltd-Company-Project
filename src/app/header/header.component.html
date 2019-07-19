@@ -58,6 +58,7 @@
 
 
   <div class=" main-panel col-md-9 col-sm-12 col-xs-12" >
+    <div class="main-container">
     <div *ngIf="userLogin" class="row " style="margin-top: 15px; transform: translateX(-60px);">
       <div class="col-md-8">
         <div class="col-md-4">
@@ -77,8 +78,37 @@
         <div class="col-md-3">
           <img src="assets\Nortification.svg" alt="" class="text-right nortification">
         </div>
-        <div class="col-md-3">
-            <img src="assets\final-1.png" alt="" class="text-right profile">
+        <div class="col-md-3 dropdown">
+          <a href="" class="dropdown-toggle " data-toggle="dropdown">
+            <img src="assets\final-1.png" alt="" class="text-right profile ">
+          </a>
+          <br>
+          <br>
+          <div class="dropdown-menu ">
+              <a class="dropdown-item" >
+                <div class="dropdown-name ">
+                    <img src="assets\final-1.png" alt="" class="dropdown-image ">
+                    <p class="font-weight-bold dropdown-name-text">Suyash Thakur   &nbsp;></p>
+                </div>
+              </a><hr class="dropdown-line">
+
+              <a class="dropdown-item" ><div class="dropdown-list-item">
+                <P class="dropdown-list">Following</P></div></a>
+              <a class="dropdown-item" ><div class="dropdown-list-item">
+                  <P class="dropdown-list">Bookmarks</P></div></a>
+                  <hr class="dropdown-line">
+                  <a class="dropdown-item" ><div class="dropdown-list-item">
+                      <P class="dropdown-list">Become a blogger</P></div></a>
+                  <hr class="dropdown-line">
+                  <a class="dropdown-item" ><div class="dropdown-list-item">
+                      <P class="dropdown-list">Settings</P></div></a>
+                      <a class="dropdown-item" ><div class="dropdown-list-item">
+                          <P class="dropdown-list">Help</P></div></a>
+                          <a class="dropdown-item" ><div class="dropdown-list-item">
+                              <P class="dropdown-list">Sign Out</P></div></a>
+
+
+            </div>
         </div>
       </div>
     </div>
@@ -96,5 +126,5 @@
       </div>
     </div>
   </div>
-
+</div>
 </div>
