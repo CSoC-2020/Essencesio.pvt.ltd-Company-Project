@@ -12,10 +12,10 @@ export class EmailLoginComponent implements OnInit {
   }
   constructor(public authService: AuthService) {}
 
-  onSignup(form: NgForm) {
+  onLogin(form: NgForm) {
     if (form.invalid) {
       return;
     }
-    this.authService.createUser(form.value.email, form.value.password);
+    this.authService.login(form.value.email, form.value.password);
   }
 }
