@@ -1,4 +1,5 @@
-<div class="background">
+  <mat-card>
+     <div class="background">
   <div class="container">
     <div class="cancel-icon"><a [routerLink]="['/']" routerLinkActive="" ><img src="assets\RepeatGrid12.svg" alt=""></a></div>
     <h1 class="header">JOIN STOPNC</h1>
@@ -18,7 +19,7 @@
           <div class="input-field">
             <input type="email" class="email-input">
           </div>
-          <br>
+          <br> 
           <span class="text email-text">PASSWORD</span>
           <div class="input-field">
             <input type="password" class="email-input">
@@ -48,12 +49,14 @@
           <h3 class="title">LOGIN</h3>
           <span class="text email-text">EMAIL</span>
           <div class="input-field">
-            <input type="email" class="email-input">
+            <input  name="email"  type="email" class="email-input"  required email>
+      
           </div>
           <br>
           <span class="text email-text">PASSWORD</span>
           <div class="input-field">
-            <input type="password" class="email-input">
+            <input type="password" name="pasword"  class="email-input"  required>
+            <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
           </div>
           <br>
           <div>
@@ -72,3 +75,4 @@
     </div>
   </div>
 </div>
+</mat-card>

@@ -7,7 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppHeaderMobileComponent } from './app-header-mobile/app-header-mobile.component';
 import { MatToolbarModule, MatButtonModule,
-  MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatTabsModule } from '@angular/material';
+  MatSidenavModule, MatIconModule, MatListModule, MatCardModule,
+  MatTabsModule, MatInputModule, MatProgressSpinnerModule } from '@angular/material';
 import { MatRadioModule } from '@angular/material/radio';
 import { LayoutModule } from '@angular/cdk/layout';
 import { RouterModule } from '@angular/router';
@@ -43,6 +44,7 @@ import { UserInfoComponent } from './desktop/user-profile/user-info/user-info.co
     EmailLoginMobileComponent,
     UserProfileComponent,
     UserInfoComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,8 @@ import { UserInfoComponent } from './desktop/user-profile/user-info/user-info.co
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,

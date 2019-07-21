@@ -6,7 +6,7 @@ import { Observable, Subject } from 'rxjs';
 })
 export class LoginService {
 
-  private isUserLogin = true;
+  private isUserLogin = false;
   private LoginUpdated = new Subject();
 
   getLoginUpdateListener() {
