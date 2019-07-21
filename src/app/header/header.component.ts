@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
 import { from, Subscription } from 'rxjs';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,8 @@ export class HeaderComponent implements OnInit {
   private loginUpdate: Subscription;
 
 
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService, private router: Router) {
+
 
       this.userLogin = loginService.getLoginStatus();
     }
@@ -26,6 +28,10 @@ export class HeaderComponent implements OnInit {
     this.userLogin = true;
     console.log(this.userLogin);
 
+  }
+  user() {
+
+    console.log('user');
   }
 
 

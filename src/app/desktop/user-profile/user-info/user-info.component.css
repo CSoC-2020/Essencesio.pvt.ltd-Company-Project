@@ -1,0 +1,33 @@
+
+a {
+  position: relative;
+  color: #2D4A86;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.second-container {
+  background-color: #A2CABE;
+  width: 100%;
+  height: 150px;
+}
+.nav-tabs > li > a:hover{
+  background-color: transparent !important;
+  border-color: transparent;
+
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  color: #5D5D5D;
+  cursor: default;
+  background-color: transparent;
+  border-bottom-color: #5D5D5D;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+.navigation-tab {
+  font-family: Regular;
+  font-size: 30px;
+  color: #F7F6F9;
+}
+

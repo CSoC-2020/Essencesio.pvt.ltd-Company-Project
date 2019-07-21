@@ -21,6 +21,9 @@
 
 
 }
+a {
+  cursor: pointer;
+}
 input:focus{
   outline: none;
   background: transparent;
@@ -77,6 +80,7 @@ mat-sidenav {
 .nav-background {
   height: 56px;
   background-color: #33AAAE;
+  width: 100%;
 }
 .tittle {
   font-family: Enhance;
@@ -93,7 +97,6 @@ mat-sidenav {
 .nortification {
   margin-top: 13px;
   height: 35px;
-  padding-right: 10px;
 }
 
 .profile {
@@ -101,12 +104,12 @@ mat-sidenav {
   margin-top: 16px;
 
 }
-.nav-bar {
-  position: fixed !important;
-  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
-  width: 100%;
-
-
+.navbar {
+  /* transform: translateX(-25px); */
+width: 79.5px;
+}
+.navitem {
+  /* transform: translateX(25px); */
 }
 .loginButton {
   position: absolute;
@@ -118,12 +121,18 @@ mat-sidenav {
   cursor: pointer;
   z-index: 1;
 }
+.head {
+  flex-grow: 2;
+}
 .loginLink {
   color: #F7F6F9;
   text-decoration: none;
   font-family: Regular
 }
-
+.container {
+  display: flex;
+  justify-content: space-between;
+}
 @media screen and (max-width: 500px) {
   .profile {
     transform: translateX(-15px);

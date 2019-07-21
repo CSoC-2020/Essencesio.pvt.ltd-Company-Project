@@ -1,0 +1,90 @@
+.upper-container {
+  background-color: rgb(214, 214, 214);
+  height: 220px;
+  padding: 10px 10px 10px 20px;
+  display: flex;
+  align-items: flex-start;
+}
+.profile-image {
+  width: 170px;
+  border: #2D4A86;
+}
+.user-info {
+  padding: 10px 10px 0px 20px;
+}
+.user-name {
+  margin-top: 0px;
+  font-family: Regular;
+  color: #2D4A86;
+  font-size: 40px;
+}
+.small-info {
+  font-family: Regular;
+  color: #5D5D5D;
+  font-weight: bold;
+  font-size: 25px;
+
+}
+.discription {
+  font-family: Regular;
+  color: #5D5D5D;
+  font-size: 20px;
+
+}
+.follow-container {
+  display: inline-block;
+
+}
+.followers {
+  float: left;
+  margin-right: 40px;
+  font-family: Regular;
+  color: #2D4A86;
+  font-size: 20px;
+}
+.following {
+  float: right;
+  font-family: Regular;
+  color: #2D4A86;
+  font-size: 20px;
+
+}
+a {
+  position: relative;
+  color: #2D4A86;
+  cursor: pointer;
+  text-decoration: none;
+}
+.align {
+  transform: translateY(-75px);
+  height: auto;
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+
+}
+.second-container {
+  background-color: #A2CABE;
+  width: 100%;
+  height: 150px;
+}
+.nav-tabs > li > a:hover{
+  background-color: transparent !important;
+  border-color: transparent;
+
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  color: #5D5D5D;
+  cursor: default;
+  background-color: transparent;
+  border-bottom-color: #5D5D5D;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+.navigation-tab {
+  font-family: Regular;
+  font-size: 30px;
+  color: #F7F6F9;
+}
+
