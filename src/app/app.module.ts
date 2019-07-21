@@ -23,10 +23,11 @@ import { EmailLoginComponent } from './desktop/login/email-login/email-login.com
 import { LoginMobileComponent } from './app-header-mobile/login-mobile/login-mobile.component';
 import { EmailLoginMobileComponent } from './app-header-mobile/login-mobile/email-login-mobile/email-login-mobile.component';
 import { UserProfileComponent } from './desktop/user-profile/user-profile.component';
+import { MatInputModule,MatProgressSpinnerModule  } from "@angular/material";
 
 
 
-@NgModule({
+@NgModule({  
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -40,7 +41,7 @@ import { UserProfileComponent } from './desktop/user-profile/user-profile.compon
     EmailLoginComponent,
     LoginMobileComponent,
     EmailLoginMobileComponent,
-    UserProfileComponent,
+    UserProfileComponent, 
   ],
   imports: [
     BrowserModule,
@@ -49,6 +50,8 @@ import { UserProfileComponent } from './desktop/user-profile/user-profile.compon
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
