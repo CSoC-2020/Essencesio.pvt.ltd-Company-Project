@@ -13,7 +13,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient) { }
 
   createUser(email: string, password: string) {
-    const authData: AuthData = {email, password};
+    const authData: AuthData = {email: email, password: password};
     console.log(authData);
     this.http.post('http://localhost:3000/api/user/signup', authData)
     .subscribe(response => {
