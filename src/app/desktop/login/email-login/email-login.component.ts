@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from "@angular/forms";
-import { AuthService } from "../Backend/auth.Service"
+import { NgForm } from '@angular/forms';
+import { AuthenticationService } from '../../../services/authentication.service';
 
 @Component({
   selector: 'app-email-login',
@@ -10,12 +10,18 @@ import { AuthService } from "../Backend/auth.Service"
 export class EmailLoginComponent implements OnInit {
   ngOnInit() {
   }
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthenticationService) {}
 
-  onLogin(form: NgForm) {
-    if (form.invalid) {
+  onLogin(email: string, password: string) {
+    if (email === '' && password === '') {
+      window.alert('Please input correct value');
       return;
-    }
-    this.authService.login(form.value.email, form.value.password);
+    } else {
+      this.authService.createUser(email, password);
+      console.log(email);
+      console.log(password);
+
+
   }
+}
 }

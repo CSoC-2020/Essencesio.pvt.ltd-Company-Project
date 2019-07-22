@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../login.service';
+import { LoginService } from '../services/login.service';
 import { from, Subscription } from 'rxjs';
 import { RouterModule, Router } from '@angular/router';
 

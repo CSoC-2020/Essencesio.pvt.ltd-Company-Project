@@ -108,9 +108,7 @@ mat-sidenav {
   /* transform: translateX(-25px); */
 width: 79.5px;
 }
-.navitem {
-  /* transform: translateX(25px); */
-}
+
 .loginButton {
   position: absolute;
   right: 5px;

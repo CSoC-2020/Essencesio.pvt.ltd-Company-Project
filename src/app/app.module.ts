@@ -25,6 +25,7 @@ import { LoginMobileComponent } from './app-header-mobile/login-mobile/login-mob
 import { EmailLoginMobileComponent } from './app-header-mobile/login-mobile/email-login-mobile/email-login-mobile.component';
 import { UserProfileComponent } from './desktop/user-profile/user-profile.component';
 import { UserInfoComponent } from './desktop/user-profile/user-info/user-info.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -64,7 +65,8 @@ import { UserInfoComponent } from './desktop/user-profile/user-info/user-info.co
     FormsModule,
     MatTabsModule,
     ReactiveFormsModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

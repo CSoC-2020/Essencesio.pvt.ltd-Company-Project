@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatSidenav } from '@angular/material';
 import {Input} from '@angular/core';
-import { LoginService } from '../login.service';
+import { LoginService } from '../services/login.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
