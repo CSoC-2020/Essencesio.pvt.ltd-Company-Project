@@ -1,0 +1,37 @@
+.background {
+  background-color: #F7F6F9;
+  height: 100%;
+
+}
+.info {
+  width: 100%;
+
+}
+.cont {
+  display: flex;
+  align-items: center;
+  padding: 25px 25px 15px 25px;
+}
+.name {
+  font-family: Regular;
+  color: #2D4A86;
+  margin-left: 15px;
+  font-size: 25px;
+ padding-top: 8px;
+
+}
+.dropdown-line {
+  margin: 0px 0px 5px 0px;
+  border: 1px solid rgba(0,0,0,.12);
+  opacity: 0.3;
+}
+.navigation {
+  padding: 5px 25px 5px 25px;
+  color: #2D4A86;
+  font-family: Regular;
+  font-size: 20px;
+}
+a {
+  text-decoration: none;
+  color: #2D4A86;
+}

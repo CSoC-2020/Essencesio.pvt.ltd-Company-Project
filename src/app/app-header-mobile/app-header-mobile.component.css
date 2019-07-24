@@ -110,8 +110,7 @@ width: 79.5px;
 }
 
 .loginButton {
-  position: absolute;
-  right: 5px;
+
   padding:3px 15px;
   margin-top: 13px;
   background-color: #2D4A86;
@@ -119,6 +118,7 @@ width: 79.5px;
   cursor: pointer;
   z-index: 1;
 }
+
 .head {
   flex-grow: 2;
 }

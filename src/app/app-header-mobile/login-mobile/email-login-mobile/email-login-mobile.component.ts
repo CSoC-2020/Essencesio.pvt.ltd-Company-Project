@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-email-login-mobile',
@@ -7,10 +8,23 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class EmailLoginMobileComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthenticationService) { }
 
   ngOnInit() {
   }
+
+  onLogin(email: string, password: string) {
+    if (email === '' && password === '') {
+      window.alert('Please input correct value');
+      return;
+    } else {
+      this.authService.createUser(email, password);
+      console.log(email);
+      console.log(password);
+
+
+  }
+}
   public scroll(element: any) {
   }
 }

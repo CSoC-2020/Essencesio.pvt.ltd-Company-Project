@@ -26,6 +26,9 @@ import { EmailLoginMobileComponent } from './app-header-mobile/login-mobile/emai
 import { UserProfileComponent } from './desktop/user-profile/user-profile.component';
 import { UserInfoComponent } from './desktop/user-profile/user-info/user-info.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserProfileMobileComponent } from './app-header-mobile/user-profile-mobile/user-profile-mobile.component';
+import { UserCredentialsComponent } from './app-header-mobile/user-profile-mobile/user-info/user-credentials/user-credentials.component';
+import { UserInformationComponent } from './app-header-mobile/user-profile-mobile/user-info/user-information/user-information.component';
 
 
 
@@ -46,6 +49,9 @@ import { HttpClientModule } from '@angular/common/http';
     UserProfileComponent,
     UserInfoComponent,
     UserProfileComponent,
+    UserProfileMobileComponent,
+    UserCredentialsComponent,
+    UserInformationComponent,
   ],
   imports: [
     BrowserModule,

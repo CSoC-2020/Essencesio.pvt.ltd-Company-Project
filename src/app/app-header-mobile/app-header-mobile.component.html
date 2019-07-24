@@ -24,9 +24,7 @@
     >
     </div>
     <div class="col-xs-2 col-sm-2" *ngIf="DisplayCategories && SearchInputEmpty && !inputInSecondarySearch">
-      <div class="loginButton" *ngIf="!userLogin" style="transform: translateY(8px);">
-        <a class="loginLink" style="cursor: pointer" (click)="Login();">LOGIN</a>
-       </div>
+      <a *ngIf="userLogin" [routerLink]="['/mobile/user']" (click)="close('toggle button')"><img src="assets\final-1.png" class="profile"></a>
     </div>
     <div class="col-sm-10 col-xs-9" *ngIf="!DisplayCategories || inputInSecondarySearch ">
 
@@ -47,10 +45,10 @@
   </mat-sidenav>
 
     <mat-sidenav-content>
-      <div class="nav-bar" *ngIf="currentRoute.url !== '/mlogin' && currentRoute.url !== '/mlogin/email'">
+      <div class="nav-bar" *ngIf="currentRoute.url !== '/mobile/login' && currentRoute.url !== '/mobile/login/email'">
         <div class="row" style="height: 56px !important;">
             <div class="nav-background" >
-            <div class="container" >
+            <div class="container" style="height: 56px ">
               <div>
               <div class="navbar ">
                   <a (click)="sidenav.open()" class="toggle-bar" ><img src="assets\Repeat Grid 11.svg" alt=""  class="toggle-bar"></a>
@@ -59,12 +57,13 @@
               <div class="head" >
                 <h1 class="text-center tittle">STOPNC</h1>
               </div>
-              <div class="navitem">
-                <a *ngIf="userLogin"><img src="assets/Nortification.svg" class="nortification pull-right"></a>
-                <a *ngIf="userLogin"><img src="assets/Nortification.svg" class="nortification  pull-right"></a>
+              <div class="navitem navbar">
+
+                  <a *ngIf="userLogin"   ><img src="assets/Nortification.svg" class="nortification  pull-right"></a>
+
 
                 <div class="loginButton" *ngIf="!userLogin">
-                  <a class="loginLink" style="cursor: pointer" (click)="Login();" [routerLink]="'mlogin'"  >LOGIN</a>
+                  <a class="loginLink" style="cursor: pointer" (click)="Login();" [routerLink]="'mobile/login'"  >LOGIN</a>
                  </div>
               </div>
             </div>
@@ -73,7 +72,7 @@
       </div>
       <router-outlet></router-outlet>
 
-      <app-bottom-nav *ngIf="userLogin && currentRoute.url !== '/mlogin' && currentRoute.url !== '/mlogin/email'"></app-bottom-nav>
+      <app-bottom-nav *ngIf="userLogin && currentRoute.url !== '/mobile/login' && currentRoute.url !== '/mobile/login/email'"></app-bottom-nav>
       </mat-sidenav-content>
 
 </mat-sidenav-container>

@@ -23,18 +23,18 @@
                   </div>
                   <span class="text email-text">EMAIL</span>
                   <div class="input-field">
-                    <input type="email" class="email-input">
+                    <input type="email" class="email-input" #email>
                   </div>
                   <span class="text email-text">PASSWORD</span>
-          <div class="input-field">
-            <input type="password" class="email-input">
+          <div class="input-field" >
+            <input type="password" class="email-input" #password>
           </div>
           <div class="terms">
             <p class="terms-text">
                 By clicking "Sign Up" you indicate that you have read and agree to STOPNCs Terms of Service and Privacy Policy.
             </p>
           </div>
-          <a>
+          <a (click)="onLogin(email.value, password.value)">
               <div class="signup-button">
                  SIGNUP
                </div>
