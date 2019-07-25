@@ -60,7 +60,7 @@
 
   <div class=" main-panel col-md-9 col-sm-12 col-xs-12" >
     <div class="main-container">
-    <div *ngIf="userLogin" class="row " style="margin-top: 15px; transform: translateX(-60px);">
+    <div *ngIf="loggedin" class="row " style="margin-top: 15px; transform: translateX(-60px);">
       <div class="col-md-8">
         <div class="col-md-4">
             <p class="nav-text text-center"><a class="nav-link">HOME</a></p>
@@ -113,8 +113,8 @@
         </div>
       </div>
     </div>
-    <div class="loginButton" *ngIf="!userLogin">
-     <a class="loginLink" style="cursor: pointer" (click)="Login();" [routerLink]="['/login']" routerLinkActive=""  >LOGIN</a>
+    <div class="loginButton"  *ngIf="!loggedin">
+     <a class="loginLink" style="cursor: pointer"  [routerLink]="['/login']" routerLinkActive=""  >LOGIN</a>
     </div>
 
     <div class="row">

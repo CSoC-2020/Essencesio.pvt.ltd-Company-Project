@@ -21,6 +21,10 @@
 
 
 }
+.nav-ber {
+  position: fixed;
+  z-index: 100;
+}
 a {
   cursor: pointer;
 }
@@ -81,6 +85,8 @@ mat-sidenav {
   height: 56px;
   background-color: #33AAAE;
   width: 100%;
+  position: fixed;
+  z-index: 1000;
 }
 .tittle {
   font-family: Enhance;

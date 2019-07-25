@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { from, Subscription } from 'rxjs';
 import { RouterModule, Router } from '@angular/router';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -10,38 +11,27 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+   authListenerSub: Subscription;
+
+  loggedin = false;
 
 
 
-  userLogin: boolean;
-  private loginUpdate: Subscription;
+
+  constructor( private router: Router, public authService: AuthenticationService) {
+    this.loggedin = this.authService.Userlogin;
+}
 
 
-  constructor(private loginService: LoginService, private router: Router) {
-
-
-      this.userLogin = loginService.getLoginStatus();
-    }
-
-
-  Login() {
-    this.userLogin = true;
-    console.log(this.userLogin);
-
-  }
-  user() {
+user() {
 
     console.log('user');
   }
 
 
   ngOnInit() {
-    this.userLogin = this.loginService.getLoginStatus();
-    this.loginUpdate = this.loginService.getLoginUpdateListener().subscribe(
-      (Login: boolean) => {
-        this.userLogin = Login;
-      }
-    );
+
+
   }
 
 }

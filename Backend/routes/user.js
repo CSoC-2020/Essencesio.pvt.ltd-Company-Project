@@ -10,6 +10,8 @@
 
   bcrypt.hash(req.body.password, 10).then(hash => {
     const user = new User({
+      FirstName: req.body.firstname,
+      LastName: req.body.lastname,
       email: req.body.email,
       password: hash
     });
@@ -55,6 +57,7 @@ router.post("/login",(req, res, next) => {
       );
       res.status(200).json({
           token: token
+
       });
      })
      .catch(err => {

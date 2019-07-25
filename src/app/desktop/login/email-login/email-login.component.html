@@ -11,7 +11,7 @@
             <span class="text side-text">FIRST NAME</span> <span class="text">LAST NAME</span>
           </div>
           <div class="input-field">
-            <span><input type="text" class="name-input"></span>  <span><input type="text" class="second-input name-input"></span>
+            <span><input type="text" class="name-input" #firstname></span>  <span><input type="text" class="second-input name-input" #lastname></span>
           </div>
           <br>
           <span class="text email-text">EMAIL</span>
@@ -35,7 +35,7 @@
                   CANCEL
                 </div>
               </a>
-              <a (click)="onLogin(email.value, password.value)">
+              <a (click)="onSignup(email.value, password.value, firstname.value, lastname.value)">
                  <div class="signup-button">
                     SIGNUP
                   </div>
@@ -47,14 +47,14 @@
       <div class="login-container ">
           <h3 class="title">LOGIN</h3>
           <span class="text email-text">EMAIL</span>
-          <div class="input-field">
-            <input  name="email"  type="email" class="email-input"  required email>
+          <div class="input-field" >
+            <input  name="email"  type="email" class="email-input"  required email #loginName>
 
           </div>
           <br>
           <span class="text email-text">PASSWORD</span>
-          <div class="input-field">
-            <input type="password" name="pasword"  class="email-input"  required>
+          <div class="input-field" >
+            <input type="password" name="pasword"  class="email-input"  required #loginPassword>
           </div>
           <br>
           <div>
@@ -62,7 +62,7 @@
           </div>
           <br>
           <div class="button">
-            <a>
+            <a (click)="onLogin(loginName.value, loginPassword.value)">
               <div class="signup-button">
                  LOGIN
                </div>

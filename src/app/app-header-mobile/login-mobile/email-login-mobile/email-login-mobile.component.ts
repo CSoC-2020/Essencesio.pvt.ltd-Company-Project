@@ -13,12 +13,12 @@ export class EmailLoginMobileComponent implements OnInit {
   ngOnInit() {
   }
 
-  onLogin(email: string, password: string) {
+  onLogin(email: string, password: string, firstname: string, lastname: string) {
     if (email === '' && password === '') {
       window.alert('Please input correct value');
       return;
     } else {
-      this.authService.createUser(email, password);
+      this.authService.createUser(email, password, firstname, lastname);
       console.log(email);
       console.log(password);
 
