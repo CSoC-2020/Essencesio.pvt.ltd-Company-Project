@@ -1,9 +1,9 @@
 <div style="height: 375px;">
 <div class="row">
     <div class="side-panel col-md-3 hidden-xs hidden-sm">
-      <div class="row" style="margin-top: 8px;">
+      <div class="row" style="margin-top: 20px;">
       <div class="col-md-6">
-        <div class="text-center">
+        <div class="text-center" >
         <a style="text-decoration: none;">
           <img src="assets\Path 1.svg" class= "" style="width: 40px;" alt=""><br>
           <p class="nav-text-2">Casual</p>
@@ -90,7 +90,7 @@
                 <div class="dropdown-name ">
 
                     <img src="assets\final-1.png" alt="" class="dropdown-image ">
-                    <p class="font-weight-bold dropdown-name-text">Suyash Thakur   &nbsp;></p>
+                    <p class="font-weight-bold dropdown-name-text">{{ Name | titlecase }}   &nbsp;></p>
                 </div>
               </a><hr class="dropdown-line">
 
@@ -105,7 +105,7 @@
                       <P class="dropdown-list" >Settings</P></div></a>
                       <a class="dropdown-item" ><div class="dropdown-list-item">
                           <P class="dropdown-list">Help</P></div></a>
-                          <a class="dropdown-item"  routerLinkActive="router-link-active" ><div class="dropdown-list-item">
+                          <a class="dropdown-item"  routerLinkActive="router-link-active" (click)="signOut()"><div class="dropdown-list-item">
                               <P class="dropdown-list">Sign Out</P></div></a>
 
 

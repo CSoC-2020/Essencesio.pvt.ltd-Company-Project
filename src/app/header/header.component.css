@@ -1,11 +1,11 @@
 
 .side-panel{
   background-color: #F7F6F9;
-  height: 300px;
+  height: 350px;
 }
 .main-panel{
   background-color: #33AAAE;
-  height: 300px;
+  height: 350px;
 
 }
 h1 {
@@ -53,7 +53,7 @@ input{
 }
 .nav-text-2 {
   font-family: Enhance;
-  font-size: 15px;
+  font-size: 20px;
   color: #2D4A86;
 }
 .nav-link {
@@ -156,9 +156,9 @@ a {
     font-size: 30px;
   }
   .main-title {
-    font-size: 90px;
+    font-size: 100px;
   }
   .main-slogan {
-    font-size: 45px;
+    font-size: 55px;
   }
 }

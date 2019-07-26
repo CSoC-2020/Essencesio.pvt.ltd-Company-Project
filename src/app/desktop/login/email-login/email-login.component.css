@@ -74,12 +74,19 @@
 input {
   border: none;
   border-radius: 25px;
-  padding-left: 8px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   font-family: Regular;
   color: #5D5D5D;
   font-size: 15px;
   border: 1px solid #5D5D5D;
 
+}
+input:-internal-autofill-selected {
+  background-color: rgb(232, 240, 254) !important;
+  background-image: none !important;
+  color:  #5D5D5D !important;
 }
 .second-input {
   transform: translateX(35px);

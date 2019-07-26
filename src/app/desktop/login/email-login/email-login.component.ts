@@ -39,8 +39,6 @@ export class EmailLoginComponent implements OnInit {
       if (this.loggedin) {
         this.authService.Userlogin = true;
         this.router.navigate(['/']);
-      } else {
-        window.alert('Login Failed');
       }
     });
   }

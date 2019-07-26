@@ -125,14 +125,26 @@ autoAuthUser() {
     if (expiresIn > 0) {
       this.token = authInformation.token;
       this.Userlogin = true;
+      this.user = helper.decodeToken(this.token);
+      this.id = this.user.userId;
+
       this.setAuthTimer(expiresIn / 1000);
       this.authStatusListener.next(true);
-      console.log(this.Userlogin);
+      console.log(this.id);
     } else {
       console.log('error');
     }
 }
+getUser(id: string) {
+  return this.http.get<{
+    _id: string;
+    FirstName: string;
+    LastName: string;
+    discription: string;
+    about: string;
 
+  }>('http://localhost:3000/api/user/userInfo' + id);
+}
 
 
 getToken() {

@@ -13,7 +13,9 @@
       FirstName: req.body.firstname,
       LastName: req.body.lastname,
       email: req.body.email,
-      password: hash
+      password: hash,
+      discription: ' ',
+      about: ' '
     });
     user
       .save()
@@ -66,5 +68,13 @@ router.post("/login",(req, res, next) => {
          });
      });
 });
-
+router.get("/userInfo:id", (req, res, next) => {
+  User.findById(req.params.id).then(user => {
+    if (user) {
+      res.status(200).json(user);
+    } else {
+      res.status(404).json({ message: "Post not found!" });
+    }
+  });
+});
 module.exports = router;
