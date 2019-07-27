@@ -2,9 +2,9 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatSidenav } from '@angular/material';
 import {Input} from '@angular/core';
-import { LoginService } from '../services/login.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-mobile',
@@ -12,13 +12,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./app-header-mobile.component.css']
 })
 export class AppHeaderMobileComponent implements OnInit {
-  userLogin: boolean;
-  private loginUpdate: Subscription;
+  userLogin = false;
+  authListenerSub: Subscription;
   currentRoute: Router;
 
-  constructor(private loginService: LoginService, private router: Router ) {
+  constructor(public authService: AuthenticationService, private router: Router ) {
 
-    this.userLogin = loginService.getLoginStatus();
+    this.userLogin = this.authService.Userlogin;
   }
   reason = '';
   // Checks if Input Tag is in focus
@@ -118,20 +118,14 @@ export class AppHeaderMobileComponent implements OnInit {
       }
   ngOnInit() {
     this.currentRoute = this.router;
+    this.authListenerSub = this.authService.getauthStatusListener().subscribe(isAuthenticated => {
+      this.userLogin = isAuthenticated;
 
-    this.userLogin = this.loginService.getLoginStatus();
-    this.loginUpdate = this.loginService.getLoginUpdateListener().subscribe(
-      (Login: boolean) => {
-        this.userLogin = Login;
-      }
-    );
-  }
-
-  Login() {
-    this.userLogin = true;
-    console.log(this.userLogin);
+    });
 
   }
+
+
 
 
 

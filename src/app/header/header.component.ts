@@ -4,6 +4,7 @@ import { from, Subscription } from 'rxjs';
 import { RouterModule, Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 import { User } from '../models/user.model';
+import { UserDataService } from '../services/user-data.service';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class HeaderComponent implements OnInit {
 
 
 
-  constructor( private router: Router, public authService: AuthenticationService) {
+  constructor( private router: Router, public authService: AuthenticationService, public userData: UserDataService) {
     this.loggedin = this.authService.Userlogin;
     this.userId = this.authService.id;
 }
@@ -47,6 +48,8 @@ signOut() {
           about: userData.about
         };
         this.Name = this.User.FirstName + ' ' + this.User.LastName;
+        this.userData.User = this.User;
+        console.log(this.userData.User);
 
 
 

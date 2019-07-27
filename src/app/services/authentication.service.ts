@@ -72,7 +72,6 @@ logout() {
   this.authStatusListener.next(false);
   this.clearAuthData();
   console.log('logout');
-  this.router.navigate(['/login']);
 }
 
 

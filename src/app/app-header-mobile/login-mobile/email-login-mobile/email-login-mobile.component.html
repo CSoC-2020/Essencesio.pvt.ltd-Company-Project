@@ -34,7 +34,7 @@
                 By clicking "Sign Up" you indicate that you have read and agree to STOPNCs Terms of Service and Privacy Policy.
             </p>
           </div>
-          <a (click)="onLogin(email.value, password.value, firstname.value, lastname.value)">
+          <a (click)="onSignup(email.value, password.value, firstname.value, lastname.value)">
               <div class="signup-button">
                  SIGNUP
                </div>
@@ -44,14 +44,14 @@
           <div id="menu1" class="tab-pane fade">
               <span class="text email-text">EMAIL</span>
               <div class="input-field">
-                <input type="email" class="email-input">
+                <input type="email" class="email-input" #user_Email>
               </div>
               <span class="text email-text">PASSWORD</span>
       <div class="input-field">
-        <input type="password" class="email-input">
+        <input type="password" class="email-input" #user_password>
       </div>
       <br>
-      <a>
+      <a (click)="onLogin(user_Email.value, user_password.value)">
           <div class="signup-button">
              LOGIN
            </div>

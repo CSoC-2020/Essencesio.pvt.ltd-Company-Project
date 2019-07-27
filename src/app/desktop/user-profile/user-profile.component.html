@@ -4,9 +4,9 @@
   <img src="assets\final-1@2x.png" alt="" class="profile-image">
 </div>
 <div class="user-info">
-  <h1 class="user-name">Suyash Thakur</h1>
-  <p class="small-info">blogger from India</p>
-  <p class="discription">Kevin is a fashion enthusiast and likes to wear comfortable casual clothes.</p><br>
+  <h1 class="user-name">{{ name | titlecase }}</h1>
+  <p class="small-info">{{ User.discription }}</p>
+  <p class="discription">{{ User.about }}</p><br>
   <div class="follow-container">
     <div class="followers">
       <a>38 followers</a>
