@@ -23,7 +23,8 @@ export class EmailLoginComponent implements OnInit {
       window.alert('Please input correct value');
       return;
     } else {
-      this.authService.createUser(email, password, firstname, lastname);
+      const name = firstname + ' ' + lastname;
+      this.authService.createUser(email, password, name);
       console.log(email);
       console.log(password);
 

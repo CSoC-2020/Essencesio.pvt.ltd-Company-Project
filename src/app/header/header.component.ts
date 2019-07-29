@@ -42,12 +42,11 @@ signOut() {
     if (this.loggedin) {
       this.authService.getUser(this.userId).subscribe(userData => {
         this.User = {
-          FirstName: userData.FirstName,
-          LastName: userData.LastName,
+          Name: userData.name,
           discription: userData.discription,
           about: userData.about
         };
-        this.Name = this.User.FirstName + ' ' + this.User.LastName;
+        this.Name = this.User.Name;
         this.userData.User = this.User;
         console.log(this.userData.User);
 

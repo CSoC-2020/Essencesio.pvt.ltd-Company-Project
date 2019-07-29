@@ -4,9 +4,9 @@
   <img src="assets\final-1@2x.png" alt="" class="profile-image">
 </div>
 <div class="user-info">
-  <h1 class="user-name">{{ name | titlecase }}</h1>
-  <p class="small-info">{{ User.discription }}</p>
-  <p class="discription">{{ User.about }}</p><br>
+  <h1 class="user-name">{{ User.Name | titlecase }}</h1>
+  <p class="small-info">{{ User.about }}</p>
+  <p class="discription">{{ User.discription }}</p><br>
   <div class="follow-container">
     <div class="followers">
       <a>38 followers</a>
@@ -17,6 +17,8 @@
   </div>
 
 </div>
+<a class="edit"><div  ><p class="edit-text" [routerLink]="['./edit']" >Edit</p></div></a>
+
 </div>
 <router-outlet name="user-info"></router-outlet>
 

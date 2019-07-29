@@ -25,11 +25,12 @@ import { LoginMobileComponent } from './app-header-mobile/login-mobile/login-mob
 import { EmailLoginMobileComponent } from './app-header-mobile/login-mobile/email-login-mobile/email-login-mobile.component';
 import { UserProfileComponent } from './desktop/user-profile/user-profile.component';
 import { UserInfoComponent } from './desktop/user-profile/user-info/user-info.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserProfileMobileComponent } from './app-header-mobile/user-profile-mobile/user-profile-mobile.component';
 import { UserCredentialsComponent } from './app-header-mobile/user-profile-mobile/user-info/user-credentials/user-credentials.component';
 import { UserInformationComponent } from './app-header-mobile/user-profile-mobile/user-info/user-information/user-information.component';
-
+import { EditProfileComponent } from './desktop/user-profile/edit-profile/edit-profile.component';
+import { AuthInterceptor } from './auth-interceptor';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { UserInformationComponent } from './app-header-mobile/user-profile-mobil
     UserProfileMobileComponent,
     UserCredentialsComponent,
     UserInformationComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,9 +74,9 @@ import { UserInformationComponent } from './app-header-mobile/user-profile-mobil
     MatTabsModule,
     ReactiveFormsModule,
     MatRadioModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

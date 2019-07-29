@@ -11,6 +11,7 @@ import { CategoriesComponent } from './app-header-mobile/categories/categories.c
 import { UserProfileMobileComponent } from './app-header-mobile/user-profile-mobile/user-profile-mobile.component';
 import { UserCredentialsComponent } from './app-header-mobile/user-profile-mobile/user-info/user-credentials/user-credentials.component';
 import { UserInformationComponent } from './app-header-mobile/user-profile-mobile/user-info/user-information/user-information.component';
+import { EditProfileComponent } from './desktop/user-profile/edit-profile/edit-profile.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -21,7 +22,9 @@ const routes: Routes = [
   {path: 'mobile/login/email', component: EmailLoginMobileComponent, pathMatch: 'full'},
   {path: 'mobile/user', component: UserProfileMobileComponent, pathMatch: 'full'},
   {path: 'mobile/user/profile', component: UserCredentialsComponent, pathMatch: 'full',
-  children: [{path: '', component: UserInformationComponent, outlet: 'user-information'}] }
+  children: [{path: '', component: UserInformationComponent, outlet: 'user-information'}] },
+  {path: 'user/edit', component: EditProfileComponent, pathMatch: 'full', children:
+  [{path: '', component: UserInfoComponent, outlet: 'user-info'}]}
 
 ];
 

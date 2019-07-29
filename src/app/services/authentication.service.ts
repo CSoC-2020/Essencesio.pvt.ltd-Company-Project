@@ -28,8 +28,8 @@ export class AuthenticationService {
     return this.authStatusListener.asObservable();
   }
 
-  createUser(email: string, password: string, firstname: string, lastname: string) {
-    const authData: AuthData = {email: email, password: password, firstname: firstname, lastname: lastname};
+  createUser(email: string, password: string, name: string) {
+    const authData: AuthData = {email: email, password: password, name: name };
     console.log(authData);
     this.http.post('http://localhost:3000/api/user/signup', authData)
     .subscribe(response => {
@@ -137,8 +137,7 @@ autoAuthUser() {
 getUser(id: string) {
   return this.http.get<{
     _id: string;
-    FirstName: string;
-    LastName: string;
+    name: string;
     discription: string;
     about: string;
 

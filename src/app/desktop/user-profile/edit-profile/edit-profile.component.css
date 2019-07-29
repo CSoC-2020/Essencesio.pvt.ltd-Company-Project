@@ -1,6 +1,6 @@
 .upper-container {
   background-color: rgb(214, 214, 214);
-  height: 220px;
+  height: 380px;
   padding: 10px 10px 10px 20px;
   display: flex;
   align-items: flex-start;
@@ -9,6 +9,11 @@
   width: 170px;
   border: #2D4A86;
 }
+.upload {
+  width: 170px;
+  background-color: gray;
+  opacity: 0.3;
+}
 .user-info {
   padding: 10px 10px 0px 20px;
 }
@@ -16,7 +21,8 @@
   margin-top: 0px;
   font-family: Regular;
   color: #2D4A86;
-  font-size: 40px;
+  font-size: 25px;
+  margin-bottom: 0px;
 }
 .small-info {
   font-family: Regular;
@@ -29,6 +35,7 @@
   font-family: Regular;
   color: #5D5D5D;
   font-size: 20px;
+  width: 100%;
 
 }
 .follow-container {
@@ -103,4 +110,44 @@ a {
 }
 .edit-text {
   margin: 0px !important;
+}
+input {
+  border: #2D4A86 2px solid;
+  padding-left: 5px;
+  margin-bottom: 10px;
+}
+.input-text {
+  margin-top: 0px;
+  font-family: Regular;
+  color: #2D4A86;
+  font-size: 20px;
+
+}
+textarea {
+  border: #2D4A86 2px solid;
+  padding-left: 5px;
+}
+.edit-picture {
+  height: 40px;
+}
+.image-edit {
+  position: relative;
+  background-color:#F7F6F9;
+  border-radius: 25px;
+  z-index: 5;
+  height: 60px;
+  width: 100px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  transform: translateX(30px) translateY(-100px);
+
+
+}
+.profile-image:hover + .image-edit {
+  display: flex;
+}
+.image-edit:hover {
+  display: flex;
 }

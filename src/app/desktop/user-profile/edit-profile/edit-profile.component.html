@@ -1,0 +1,33 @@
+<div class="align">
+  <div class="upper-container">
+  <div class="image-user">
+    <img src="assets\final-1@2x.png" alt="" class="profile-image">
+    <div class="image-edit">
+    <img src="assets\edit.svg" class="edit-picture">
+  </div>
+  </div>
+  <div class="user-info">
+    <h1 class="user-name">Name</h1>
+    <p class="input-text"><input type="text" [(ngModel)]=" name"></p>
+    <h1 class="user-name" style="margin-top: 5px;">Cridential</h1>
+    <p class="small-info"><input type="text" [(ngModel)]="cridential" style="width: 500px;"></p>
+    <h1 class="user-name" style="margin-top: 5px;">About</h1>
+    <p class="small-info"><textarea type="text" [(ngModel)]="about" style="width: 800px;" rows=3></textarea>
+
+    <div class="follow-container">
+      <div class="followers">
+        <a>38 followers</a>
+      </div>
+      <div class="following">
+        <a class="following-link">18 following</a>
+      </div>
+    </div>
+
+  </div>
+  <a class="edit"><div  ><p class="edit-text" (click)="editUser()" >Save</p></div></a>
+
+  </div>
+  <router-outlet name="user-info"></router-outlet>
+
+
+  </div>

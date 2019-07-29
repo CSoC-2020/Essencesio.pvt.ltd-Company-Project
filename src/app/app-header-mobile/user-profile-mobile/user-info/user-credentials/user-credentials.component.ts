@@ -14,7 +14,7 @@ export class UserCredentialsComponent implements OnInit {
 
   constructor(public userData: UserDataService) {
     this.User = this.userData.User;
-    this.name = this.User.FirstName + ' ' + this.User.LastName;
+    this.name = this.User.Name;
   }
 
   ngOnInit() {
