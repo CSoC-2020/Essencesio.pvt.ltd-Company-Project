@@ -1,0 +1,46 @@
+<div class="cont">
+ <div class="image-edit">
+   <div>
+  <img src="assets\final-1.png" alt="" style="height: 45px;">
+</div>
+  <div class="text">
+   Edit Photo
+ </div>
+ </div>
+ <hr>
+ <div class="image-edit">
+    <div class="head-text">
+      <p>
+      Name
+    </p>
+ </div>
+   <div class="text" style="transform: translateX(-15px)">
+     <input type="text" [(ngModel)]=" name">
+  </div>
+  </div>
+  <hr>
+  <div class="image-edit">
+      <div class="head-text">
+        <p>
+        Cridential
+      </p>
+   </div>
+     <div class="text-area" >
+        <textarea name="" id="" cols="80" rows="2" placeholder="Write a short discription about yourself" [(ngModel)]="cridential"></textarea>
+    </div>
+    </div>
+    <hr>
+    <div class="image-edit">
+        <div class="head-text">
+          <p style="transform: translateY(-35px)">
+          About
+        </p>
+     </div>
+       <div class="text-area"  style="margin-left: 63px">
+          <textarea name="" id="" cols="80" rows="4" placeholder="Describe your fashion"  [(ngModel)]="about"></textarea>
+      </div>
+      </div>
+      <hr>
+      <a class="edit"><div  ><p class="edit-text" (click)="editUser()" >Save</p></div></a>
+
+</div>

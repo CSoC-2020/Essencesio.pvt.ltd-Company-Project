@@ -31,6 +31,7 @@ import { UserCredentialsComponent } from './app-header-mobile/user-profile-mobil
 import { UserInformationComponent } from './app-header-mobile/user-profile-mobile/user-info/user-information/user-information.component';
 import { EditProfileComponent } from './desktop/user-profile/edit-profile/edit-profile.component';
 import { AuthInterceptor } from './auth-interceptor';
+import { UserEditMobileComponent } from './app-header-mobile/user-profile-mobile/user-edit-mobile/user-edit-mobile.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { AuthInterceptor } from './auth-interceptor';
     UserCredentialsComponent,
     UserInformationComponent,
     EditProfileComponent,
+    UserEditMobileComponent,
   ],
   imports: [
     BrowserModule,

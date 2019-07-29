@@ -1,0 +1,60 @@
+.cont {
+}
+.image-edit {
+  display: flex;
+  align-items: center;
+  padding: 10px 5px 0px 15px;
+
+}
+.text {
+  font-family: Regular;
+  color: #5D5D5D;
+  font-size: 20px;
+  margin-left: 80px;
+}
+hr {
+  border: 1px solid #5D5D5D;
+  opacity: 0.1;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.head-text {
+  font-family: Regular;
+  color: #2D4A86;
+  font-size: 22px;
+}
+p {
+  margin-bottom: 3px !important;
+}
+input {
+  width: 100%;
+  border: none;
+
+}
+textarea {
+  width: 100%;
+  border: none;
+}
+.text-area {
+  font-family: Regular;
+  color: #5D5D5D;
+  font-size: 20px;
+  margin-left: 28px;
+}
+.edit {
+  position: absolute;
+  right: 15px;
+  background-color: #2D4A86;
+  color: #F7F6F9;
+  font-family: Regular;
+  font-size: 18px;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  border-radius: 25px;
+  margin-top: 15px;
+}
+.edit-text {
+  margin: 0px !important;
+}
