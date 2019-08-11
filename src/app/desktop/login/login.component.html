@@ -1,91 +1,55 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="script.js" type="text/javascript"></script>
-  </head>
-  <body ng-app="myApp" ng-controller="myController">
-    <div class="background">
-      <div class="row">
-      <div class="container">
-        <div class="cancel-icon"><a [routerLink]="['/']" routerLinkActive="" ><img src="assets\RepeatGrid12.svg" alt=""></a></div>
-        <h1 class="header">JOIN STOPNC</h1>
-        <br>
-        <p class="info">
-          Create an account to receive great stories in your inbox,
-          personalize your homepage, and follow bloggers and topics
-          that you love.
-        </p>
-        <br>
-        <br>
-        <div class="login-buttons">
-            <a >
-          <div class="facebook-button">
-             
-             <img src="assets\facebook.svg" alt="" class="social-icon-facebook"> <span class="button-text-facebook">CONTINUE WITH FACEBOOK</span>
-            
-    
-          </div>
-        </a>
+<div class="background">
+  <div class="row">
+  <div class="container">
+    <div class="cancel-icon"><a [routerLink]="['/']" routerLinkActive="" ><img src="assets\RepeatGrid12.svg" alt=""></a></div>
+    <h1 class="header">JOIN STOPNC</h1>
+    <br>
+    <p class="info">
+      Create an account to receive great stories in your inbox,
+      personalize your homepage, and follow bloggers and topics
+      that you love.
+    </p>
+    <br>
+    <br>
+    <div class="login-buttons">
+        <a >
+      <div class="facebook-button">
+          <img src="assets\facebook.svg" alt="" class="social-icon-facebook"> <span class="button-text-facebook">CONTINUE WITH FACEBOOK</span>
+
         </div>
-        <br>
-        <div class="login-buttons">
-            <a >
-          <div class="google-button">
-    
-             <img src="assets\google.svg" alt="" class="social-icon-google"> <input ng-click="onGoogleLogin()" type="button" value="Login" class="button-text-google">CONTINUE WITH GOOGLE</input>
-    
+      </a>
+      </div>
+      <br>
+      <div class="login-buttons">
+          <a >
+        <div class="google-button">
+            <img src="assets\google.svg" alt="" class="social-icon-google"> <span class="button-text-google">CONTINUE WITH GOOGLE</span>
           </div>
         </a>
-        <h4>{{gmail.username}}</h4>
-        <h4>{{gmail.email}}</h4>
-        <img ng-src = "{{g_image}}" style="width: 100px; height:100px" ></img>
-        <script type="text/javascript" src="app3.js"></script>
-        <script type="text/javascript">
-
-        (function() {
-          var p = document.createElement('script');
-          p.type = 'text/javascript';
-          p.async = true ;
-          p.src = 'https://apis.google.com/js/client.js?onLoadFunction';
-
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(p,s);
-        }
-        )
-
-        </script>
         </div>
         <br>
         <div class="login-buttons">
             <a [routerLink]="['./email']" routerLinkActive="router-link-active" >
           <div class="email-button">
-    
+
              <img src="assets\message.svg" alt="" class="social-icon-email"> <span class="button-text-email">CONTINUE WITH EMAIL</span>
-    
+
           </div>
         </a>
-        </div>
-    
-    <br>
-    <div class="text">
-      <p class="terms">By continuing you indicate that you have read and agree to STOPNCs Terms of Service and Privacy Policy.
-      </p>
+        <br>
+<div class="text">
+  <p class="terms">By continuing you indicate that you have read and agree to STOPNCs Terms of Service and Privacy Policy.
+  </p>
+</div>
+<hr>
+    <div class="bottom-conatainer">
+      <div class="extra-info">
+        <a><span class="extra-info-text">About</span></a>
+      </div>
+      <div class="extra-info">
+        <a><span class="extra-info-text"> Terms</span></a>
+      </div>
+      <div class="extra-info">
+        <a><span class="extra-info-text"> Contact</span></a>
+      </div>
     </div>
-    <hr>
-        <div class="bottom-conatainer">
-          <div class="extra-info">
-            <a><span class="extra-info-text">About</span></a>
-          </div>
-          <div class="extra-info">
-            <a><span class="extra-info-text"> Terms</span></a>
-          </div>
-          <div class="extra-info">
-            <a><span class="extra-info-text"> Contact</span></a>
-          </div>
-        </div>
-    </div>
-    
-  </body>
-</html>
