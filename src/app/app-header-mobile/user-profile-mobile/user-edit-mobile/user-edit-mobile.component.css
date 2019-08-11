@@ -1,4 +1,5 @@
 .cont {
+  background-color: #F7F6F9;
 }
 .image-edit {
   display: flex;
@@ -29,11 +30,14 @@ p {
 input {
   width: 100%;
   border: none;
+  background-color: transparent;
+
 
 }
 textarea {
   width: 100%;
   border: none;
+  background-color: transparent;
 }
 .text-area {
   font-family: Regular;
