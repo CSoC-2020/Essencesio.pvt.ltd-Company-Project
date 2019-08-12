@@ -1,93 +1,44 @@
- const express = require("express");
- const bcrypt = require("bcrypt");
- const jwt = require("jsonwebtoken");
+const express = require('express');
+const router = require('express-promise-router')();
+const passport = require('passport');
+const passportConf = require('../passport');
 
- const User  = require("../Model/user");
- const checkAuth = require("../middleware/check-auth");
+const { validateBody, schemas } = require('../helpers/routeHelpers.js');
+const UsersController = require('../controllers/users');
+const passportSignIn = passport.authenticate('local', { session: false });
+const passportJWT = passport.authenticate('jwt', { session: false });
 
+router.route('/signup')
+  .post(validateBody(schemas.authSchema), UsersController.signUp);
 
- const router = express.Router();
+router.route('/signin')
+  .post(validateBody(schemas.authSchema), passportSignIn, UsersController.signIn);
 
- router.post("/signup", (req, res, next) => {
+router.route('/signout')
+  .get(passportJWT, UsersController.signOut);
 
-  bcrypt.hash(req.body.password, 10).then(hash => {
-    const user = new User({
-      name: req.body.name,
-      email: req.body.email,
-      password: hash,
-      discription: '',
-      about: ''
-    });
-    user
-      .save()
-      .then(result => {
-        res.status(201).json({
-          message: "User created!",
-          result: result
-        });
-      })
-      .catch(err => {
-        res.status(500).json({
-          error: err
-        });
-      });
-  });
-});
+router.route('/oauth/google')
+  .post(passport.authenticate('googleToken', { session: false }), UsersController.googleOAuth);
 
+router.route('/oauth/facebook')
+  .post(passport.authenticate('facebookToken', { session: false }), UsersController.facebookOAuth);
 
-router.post("/login",(req, res, next) => {
-    let fetchedUser;
-    User.findOne({ email: req.body.email })
-     .then(user => {
-          if (!user) {
-            return res.status(401).json({
-                message: "Auth failed"
-            });
-          }
-        fetchedUser = user;
-        return bcrypt.compare(req.body.password, user.password);
-     })
-     .then(result => {
-       if(!result) {
-           return res.status(401).json({
-               message: "Auth failed"
-           });
-       }
-     const token = jwt.sign(
-         {email: fetchedUser.email, userId: fetchedUser._id},
-        'letmein@26',
-        { expiresIn: "1h" }
-      );
-      res.status(200).json({
-          token: token
+router.route('/oauth/link/google')
+  .post(passportJWT, passport.authorize('googleToken', { session: false }), UsersController.linkGoogle)
 
-      });
-     })
-     .catch(err => {
-         return res.status(401).json({
-             message: "Auth failed"
-         });
-     });
-});
-router.get("/userInfo:id",checkAuth, (req, res, next) => {
-  User.findById(req.params.id).then(user => {
-    if (user) {
-      res.status(200).json(user);
-    } else {
-      res.status(404).json({ message: "Post not found!" });
-    }
-  });
-});
-router.put("/userUpdate:id",checkAuth, (req, res, next) => {
-  const user = new User({
-    _id: req.body.id,
-    name: req.body.name,
-    discription: req.body.cridential,
-    about: req.body.about
-  });
-  console.log(user);
-  User.updateOne({_id: req.params.id}, user).then(result => {
-    res.status(200).json({ message: "Update successful!" });
-  });
-});
+router.route('/oauth/unlink/google')
+  .post(passportJWT, UsersController.unlinkGoogle);
+
+router.route('/oauth/link/facebook')
+  .post(passportJWT, passport.authorize('facebookToken', { session: false }), UsersController.linkFacebook)
+
+router.route('/oauth/unlink/facebook')
+  .post(passportJWT, UsersController.unlinkFacebook);
+
+router.route('/dashboard')
+  .get(passportJWT, UsersController.dashboard);
+
+router.route('/status')
+  .get(passportJWT, UsersController.checkAuth);
+
 module.exports = router;
