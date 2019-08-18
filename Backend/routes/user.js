@@ -4,7 +4,7 @@ const passport = require('passport');
 const passportConf = require('../passport');
 
 const { validateBody, schemas } = require('../helpers/routeHelpers.js');
-const UsersController = require('../controllers/users');
+const UsersController = require('../contollers/user2');
 const passportSignIn = passport.authenticate('local', { session: false });
 const passportJWT = passport.authenticate('jwt', { session: false });
 

@@ -1,13 +1,13 @@
 const JWT = require('jsonwebtoken');
-const User = require('../Model/user');
-const { JWT_SECRET } = require('../configuration');
+const User = require('../Model/User');
+const { JWT_SECRET } = require('../configurations/index');
 
 signToken = user => {
   return JWT.sign({
     iss: 'CodeWorkr',
     sub: user.id,
-    iat: new Date().getTime(), 
-    exp: new Date().setDate(new Date().getDate() + 1) 
+    iat: new Date().getTime(),
+    exp: new Date().setDate(new Date().getDate() + 1)
   }, JWT_SECRET);
 }
 
@@ -15,41 +15,41 @@ module.exports = {
   signUp: async (req, res, next) => {
     const { email, password } = req.value.body;
 
-    
+
     let foundUser = await User.findOne({ "local.email": email });
-    if (foundUser) { 
+    if (foundUser) {
       return res.status(403).json({ error: 'Email is already in use'});
     }
 
-    foundUser = await User.findOne({ 
+    foundUser = await User.findOne({
       $or: [
         { "google.email": email },
         { "facebook.email": email },
-      ] 
+      ]
     });
     if (foundUser) {
-    
+
       foundUser.methods.push('local')
       foundUser.local = {
-        email: email, 
+        email: email,
         password: password
       }
       await foundUser.save()
-    
+
       const token = signToken(foundUser);
-    
+
       res.cookie('access_token', token, {
         httpOnly: true
       });
       res.status(200).json({ success: true });
     }
 
-    
+
     // New user
-    const newUser = new User({ 
+    const newUser = new User({
       methods: ['local'],
       local: {
-        email: email, 
+        email: email,
         password: password
       }
     });
@@ -76,12 +76,12 @@ module.exports = {
 
   signOut: async (req, res, next) => {
     res.clearCookie('access_token');
-    
+
     res.json({ success: true });
   },
 
   googleOAuth: async (req, res, next) => {
-  
+
     const token = signToken(req.user);
     res.cookie('access_token', token, {
       httpOnly: true
@@ -90,15 +90,15 @@ module.exports = {
   },
 
   linkGoogle: async (req, res, next) => {
-    res.json({ 
+    res.json({
       success: true,
-      methods: req.user.methods, 
-      message: 'Successfully linked account with Google' 
+      methods: req.user.methods,
+      message: 'Successfully linked account with Google'
     });
   },
 
   unlinkGoogle: async (req, res, next) => {
-    
+
     if (req.user.google) {
       req.user.google = undefined
     }
@@ -109,11 +109,11 @@ module.exports = {
     }
     await req.user.save()
 
-    
-    res.json({ 
+
+    res.json({
       success: true,
-      methods: req.user.methods, 
-      message: 'Successfully unlinked account from Google' 
+      methods: req.user.methods,
+      message: 'Successfully unlinked account from Google'
     });
   },
 
@@ -127,10 +127,10 @@ module.exports = {
   },
 
   linkFacebook: async (req, res, next) => {
-    res.json({ 
-      success: true, 
-      methods: req.user.methods, 
-      message: 'Successfully linked account with Facebook' 
+    res.json({
+      success: true,
+      methods: req.user.methods,
+      message: 'Successfully linked account with Facebook'
     });
   },
 
@@ -139,24 +139,24 @@ module.exports = {
     if (req.user.facebook) {
       req.user.facebook = undefined
     }
-    
+
     const facebookStrPos = req.user.methods.indexOf('facebook')
     if (facebookStrPos >= 0) {
       req.user.methods.splice(facebookStrPos, 1)
     }
     await req.user.save()
 
-    
-    res.json({ 
+
+    res.json({
       success: true,
-      methods: req.user.methods, 
-      message: 'Successfully unlinked account from Facebook' 
+      methods: req.user.methods,
+      message: 'Successfully unlinked account from Facebook'
     });
   },
 
   dashboard: async (req, res, next) => {
     console.log('I managed to get here!');
-    res.json({ 
+    res.json({
       secret: "resource",
       methods: req.user.methods
     });

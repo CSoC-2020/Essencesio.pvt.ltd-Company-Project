@@ -43,20 +43,20 @@ userSchema.pre('save', async function (next) {
     if (!this.methods.includes('local')) {
       next();
     }
-    
+
     const user = this;
-    
-    if (!user.isModified('local.password')) {
+
+     if (!user.isModified('local.password')) {
       next();
-    
+
     const salt = await bcrypt.genSalt(10);
 
     const passwordHash = await bcrypt.hash(this.local.password, salt);
-    
+
     this.local.password = passwordHash;
     console.log('exited');
     next();
-  } catch (error) {
+  }} catch (error) {
     next(error);
   }
 });
