@@ -12,7 +12,7 @@ router.route('/signup')
   .post(validateBody(schemas.authSchema), UsersController.signUp);
 
 router.route('/signin')
-  .post(validateBody(schemas.authSchema), passportSignIn, UsersController.signIn);
+  .post(validateBody(schemas.loginSchema), passportSignIn, UsersController.signIn);
 
 router.route('/signout')
   .get(passportJWT, UsersController.signOut);

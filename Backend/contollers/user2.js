@@ -13,7 +13,7 @@ signToken = user => {
 
 module.exports = {
   signUp: async (req, res, next) => {
-    const { email, password } = req.value.body;
+    const { name, email, password } = req.value.body;
 
 
     let foundUser = await User.findOne({ "local.email": email });
@@ -31,11 +31,13 @@ module.exports = {
 
       foundUser.methods.push('local')
       foundUser.local = {
+
+        name: name,
         email: email,
         password: password
       }
-      await foundUser.save()
 
+      await foundUser.save()
       const token = signToken(foundUser);
 
       res.cookie('access_token', token, {
@@ -49,11 +51,12 @@ module.exports = {
     const newUser = new User({
       methods: ['local'],
       local: {
+        name: name,
         email: email,
         password: password
       }
     });
-
+    console.log('new');
     await newUser.save();
 
     // Generate the token
