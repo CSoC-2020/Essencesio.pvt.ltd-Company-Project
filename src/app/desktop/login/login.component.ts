@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService, GoogleLoginProvider } from 'angularx-social-login';
+import { AuthService, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { Subscription } from 'rxjs';
 
@@ -58,4 +58,26 @@ export class LoginComponent implements OnInit {
          });
          });
    }
+   public facebookLogin() {
+    let socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+    this.socialAuthService.signIn(socialPlatformProvider).then(
+      (userData) => {
+            //this will return user data from facebook. What you need is a user token which you will send it to the server
+            console.log(userData.email);
+            this.userInfo = userData;
+            this.authenticationService.googleLogin(this.userInfo.id, this.userInfo.email, this.userInfo.name).then((data) => {
+              console.log(data);
+              this.authListenerSub = this.authenticationService.getauthStatusListener().subscribe(
+               isAuthenticated => {
+               this.loggedin = isAuthenticated;
+               console.log(this.loggedin);
+               if (this.loggedin) {
+                 this.authenticationService.Userlogin = true;
+                 this.router.navigate(['/']);
+               }
+             });
+            });
+       }
+    );
+}
 }
