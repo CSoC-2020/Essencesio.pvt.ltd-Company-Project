@@ -28,35 +28,43 @@ export class AuthenticationService {
     return this.authStatusListener.asObservable();
   }
 
-  createUser(email: string, password: string, name: string) {
-    const authData: AuthData = {email, password, name };
-    console.log(authData);
-    this.http.post('http://localhost:3000/api/user/signup', authData)
+  createUser(email: string, password: string, name: string): Promise<any> {
+    return Promise.resolve((() => {
+      // code here
+      const authData: AuthData = {email, password, name };
+      this.http.post('http://localhost:3000/api/user/signup', authData)
     .subscribe(response => {
         console.log(response);
     });
+      return 'from first'; // return whatever you want not neccessory
+  })());
 }
 
-login(email: string, password: string) {
-    const authData = {email, password};
-    this.http.post<{token: string; expiresIn: number}>('http://localhost:3000/api/user/login', authData)
-    .subscribe(response => {
-      console.log(response);
+login(email: string, password: string): Promise<any> {
 
-      const token = response.token;
-      this.token = token;
-      console.log(this.token);
-      this.authStatusListener.next(true);
-      this.user = helper.decodeToken(token);
-      this.setAuthTimer(this.user.exp);
+    return Promise.resolve((() => {
+      // code here
+      const authData = {email, password};
+      this.http.post<{token: string; expiresIn: number}>('http://localhost:3000/api/user/login', authData)
+      .subscribe(response => {
+        console.log(response);
 
-      console.log(this.user.exp);
-      this.id = this.user.userId;
-      console.log(this.user);
-      console.log(this.id);
-      this.saveAuthData(token, this.user.exp);
+        const token = response.token;
+        this.token = token;
+        console.log(this.token);
+        this.authStatusListener.next(true);
+        this.user = helper.decodeToken(token);
+        this.setAuthTimer(this.user.exp);
 
-    });
+        console.log(this.user.exp);
+        this.id = this.user.userId;
+        console.log(this.user);
+        console.log(this.id);
+        this.saveAuthData(token, this.user.exp);
+
+      });
+      return 'from second'; // return whatever you want not neccessory
+  })());
 }
 
 
@@ -149,5 +157,13 @@ getUser(id: string) {
 
 getToken() {
   return this.token;
+}
+
+async googleLogin( id: string, email: string, name: string ) {
+
+  await this.createUser(email, id, name);
+  this.login(email, id).then((data) => {
+    console.log('email done' + data);
+  });
 }
 }

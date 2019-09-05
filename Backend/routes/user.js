@@ -90,4 +90,6 @@ router.put("/userUpdate:id",checkAuth, (req, res, next) => {
    res.status(200).json({ message: "Update successful!" });
  });
 });
+
+
 module.exports = router;
