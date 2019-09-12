@@ -1,30 +1,34 @@
-const express = require('express');
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const cookieParser = require('cookie-parser');
+const  express =  require('express');
+const  mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const path = require("path");
 
-mongoose.Promise = global.Promise;
-if (process.env.NODE_ENV === 'test') {
-  mongoose.connect('mongodb://localhost/APIAuthenticationTEST', { useNewUrlParser: true });
-} else {
-  mongoose.connect('mongodb://localhost/APIAuthentication', { useNewUrlParser: true });
-}
+
+const userRoutes = require("./routes/user");
 
 const app = express();
-app.use(cookieParser())
-app.use(cors({
-  origin: 'http://localhost:4200',
-  credentials: true
-}));
 
-if (!process.env.NODE_ENV === 'test') {
-  app.use(morgan('dev'));
-}
+mongoose.connect(
+  "mongodb://localhost:27017")
+.then(() => {
+    console.log("Connected to database!");
+})
+.catch(() => {
+    console.log("Connection failed!");
+});
 
 app.use(bodyParser.json());
-// Routes
-app.use('/users', require('./routes/user'));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use( (req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-Width, Content-Type, Accept, Authorization");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS, PUT");
+
+
+  next();
+});
+
+app.use("/api/user", userRoutes);
 
 module.exports = app;

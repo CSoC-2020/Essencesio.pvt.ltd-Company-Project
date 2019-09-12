@@ -92,11 +92,11 @@ input{
 }
 .dropdown-menu {
   background-color: #F7F6F9;
-  width: 160px !important;
-  z-index: 1000;
+  width: 200px !important;
+  z-index: 10000;
   position: fixed;
   left: auto !important;
-  transform: translateX(-40px);
+  transform: translateX(-60px);
 }
 .main-container {
   padding: 5px 20px 0px 20px;
