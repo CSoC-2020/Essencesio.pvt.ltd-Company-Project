@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 
   var blogSchema = new Schema({
     title:  String,
+    image:  String,
     author: String,
     body:   String,
     comments: [{ body: String, date: Date }],
@@ -14,4 +15,4 @@ var mongoose = require('mongoose');
     }
   }); 
 
-  module.exports = mongoose.model('Post', blogSchema);
+  module.exports = mongoose.model('Post', blogSchema); 
