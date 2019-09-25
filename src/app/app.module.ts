@@ -34,6 +34,9 @@ import { AuthInterceptor } from './auth-interceptor';
 import { UserEditMobileComponent } from './app-header-mobile/user-profile-mobile/user-edit-mobile/user-edit-mobile.component';
 import {SocialLoginModule, AuthServiceConfig, GoogleLoginProvider} from 'angularx-social-login';
 import { getAuthServiceConfigs } from './socialLoginConfig';
+import { CreateComponent } from './create/create.component';
+import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { SliderModule } from 'angular-image-slider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +59,7 @@ import { getAuthServiceConfigs } from './socialLoginConfig';
     UserInformationComponent,
     EditProfileComponent,
     UserEditMobileComponent,
+    CreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +82,8 @@ import { getAuthServiceConfigs } from './socialLoginConfig';
     MatRadioModule,
     HttpClientModule,
     SocialLoginModule,
+    RichTextEditorAllModule,
+    SliderModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   {provide: AuthServiceConfig, useFactory: getAuthServiceConfigs}],

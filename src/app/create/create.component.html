@@ -1,0 +1,54 @@
+<div style="height: 100px">
+<div class="header">
+<div class="name dropdown">
+    <a href="" class="dropdown-toggle " data-toggle="dropdown">
+        <img src="../../assets/menuDots.svg">
+      </a>
+      <div class="dropdown-menu " >
+          <a class="dropdown-item" style="color: #2D4A86; padding-left: 5px;">
+
+              Save draft
+
+          </a><hr class="dropdown-line">
+          <a class="dropdown-item" style="color: #2D4A86; padding-left: 5px;">
+
+                Delete
+
+            </a><hr class="dropdown-line">
+            <a class="dropdown-item" style="color: #2D4A86; padding-left: 5px;">
+
+                  Change  Attributes
+
+              </a><hr class="dropdown-line">
+
+
+
+      </div>
+</div>
+<div class="name">
+  <h1>STOPNC</h1>
+</div>
+<div >
+  <div class="submitButton">
+  <a class="submitlink" style="cursor: pointer"  [routerLink]="['/submit']" routerLinkActive=""  >Submit</a>
+</div>
+</div>
+</div>
+</div>
+<div class="texteditor">
+  <textarea rows="2" placeholder="Title" class="title"></textarea>
+</div>
+<hr>
+<div class="textbody">
+  <textarea rows="15" placeholder="Body" class="body"></textarea>
+</div>
+<input type="file" #filePicker (change)="onSelectFile($event)" style="display:none">
+<div class="add">
+  <a (click)="filePicker.click()"><svg height="36px" viewBox="0 0 512 512" width="36px" ><g><path d="m437.019531 74.980469c-48.351562-48.351563-112.640625-74.980469-181.019531-74.980469s-132.667969 26.628906-181.019531 74.980469c-48.351563 48.351562-74.980469 112.640625-74.980469 181.019531s26.628906 132.667969 74.980469 181.019531c48.351562 48.351563 112.640625 74.980469 181.019531 74.980469s132.667969-26.628906 181.019531-74.980469c48.351563-48.351562 74.980469-112.640625 74.980469-181.019531s-26.628906-132.667969-74.980469-181.019531zm-181.019531 397.019531c-119.101562 0-216-96.898438-216-216s96.898438-216 216-216 216 96.898438 216 216-96.898438 216-216 216zm20-236.019531h90v40h-90v90h-40v-90h-90v-40h90v-90h40zm0 0" data-original="#000000" class="active-path" data-old_color="#000000" fill="#2D4A86"/></g> </svg>
+  </a>
+</div>
+<hr>
+<div class="Images" *ngIf="isImage">
+  Images  <br>
+  <img [src] = "img" *ngFor="let img of imagesUrl" style="height: 200px; padding: 10px;">
+</div>
