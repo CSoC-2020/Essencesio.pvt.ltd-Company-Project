@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute, ParamMap } from "@angular/router";
+import { BlogService } from '../services/blog.service';
 
 @Component({
   selector: 'app-create',
@@ -13,8 +14,10 @@ export class CreateComponent implements OnInit {
   public imagesUrl = [];
   public isImage = false;
   public url;
+  public title: string;
+  public body: string;
 
-  constructor() { }
+  constructor(private blogservice: BlogService) { }
 
   ngOnInit() {
   }
@@ -32,6 +35,9 @@ export class CreateComponent implements OnInit {
 
         };
       }
+  }
+  onSubmit() {
+    this.blogservice.saveBlog(this.title, this.body, this.imagesUrl);
   }
 
 }

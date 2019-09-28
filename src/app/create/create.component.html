@@ -36,11 +36,11 @@
 </div>
 </div>
 <div class="texteditor">
-  <textarea rows="2" placeholder="Title" class="title"></textarea>
+  <textarea rows="2" placeholder="Title" class="title" [(ngModel)]="title"></textarea>
 </div>
 <hr>
 <div class="textbody">
-  <textarea rows="15" placeholder="Body" class="body"></textarea>
+  <textarea rows="15" placeholder="Body" class="body" [(ngModel)]="body"></textarea>
 </div>
 <input type="file" #filePicker (change)="onSelectFile($event)" style="display:none">
 <div class="add">
