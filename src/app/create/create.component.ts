@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute, ParamMap } from "@angular/router";
 import { BlogService } from '../services/blog.service';
+import { Blog } from '../models/blog.model';
 
 @Component({
   selector: 'app-create',
@@ -16,6 +17,7 @@ export class CreateComponent implements OnInit {
   public url;
   public title: string;
   public body: string;
+  blog: Blog;
 
   constructor(private blogservice: BlogService) { }
 
@@ -37,6 +39,11 @@ export class CreateComponent implements OnInit {
       }
   }
   onSubmit() {
+    // console.log(this.body);
+    // console.log(this.title);
+    // console.log(this.imagesUrl);
+
+
     this.blogservice.saveBlog(this.title, this.body, this.imagesUrl);
   }
 
