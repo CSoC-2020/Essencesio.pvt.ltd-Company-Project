@@ -13,7 +13,7 @@ export class BlogService {
   constructor(private http: HttpClient, private router: Router) { }
 
    saveBlog(title: string, body: string, image: any[]) {
-     const Blog = new Blog({
+     const Blog: Blog = ({
        title: title,
        body: body,
        image: image
