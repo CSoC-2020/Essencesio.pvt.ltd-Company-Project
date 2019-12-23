@@ -17,6 +17,7 @@ export class AuthenticationService {
   id: string;
   Userlogin: boolean;
   private tokenTimer: any;
+  timer: any;
 
 
   private token: string;
@@ -54,13 +55,13 @@ login(email: string, password: string): Promise<any> {
         console.log(this.token);
         this.authStatusListener.next(true);
         this.user = helper.decodeToken(token);
+        this.saveAuthData(token, this.user.exp);
         this.setAuthTimer(this.user.exp);
 
         console.log(this.user.exp);
         this.id = this.user.userId;
         console.log(this.user);
         console.log(this.id);
-        this.saveAuthData(token, this.user.exp);
 
       });
       return 'from second'; // return whatever you want not neccessory

@@ -1,109 +1,54 @@
-var bodyParser = require("body-parser"),
-methodOverride = require("method-override"), 
-mongoose = require("mongoose"), 
-express = require("express"),
-app = express();
+const express = require("express");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
-//APP
-mongoose.connect(
-    "mongodb://localhost:27017")
-  .then(() => {
-      console.log("Connected to database!");
-  })
-  .catch(() => {
-      console.log("Connection failed!");
+const Blog  = require("../Model/Posts");
+const checkAuth = require("../middleware/check-auth");
+
+
+const router = express.Router();
+
+const app = express();
+
+router.get("/blogs:id", (req, res, next) => {
+  Blog.findById(req.params.id).then( blog => {
+    if(blog) {
+      res.status(200).json(blog);
+    } else {
+      res.status(404).json("Blog not found");
+    }
   });
-
-app.set("view engine","ejs"); 
-app.use(express.static("public"));
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(methodOverride("_method"));
-
-//MONGOOSE
- var  blogSchema = require("../Model/Posts"); 
-
- var Blog = mongoose.model("Blog", blogSchema);
-
-//RESTFUL // Routing to be change according to the Frontend
-app.get("/", function(req, res){
-    res.redirect("/blogs");
 });
-//INDEX
-app.get("/blogs", function(req, res){
-    Blog.find({}, function(err, blogs){
-        if(err){
-            console.log("ERROR!");
-        } else {
-            res.render("index", {blogs: blogs});
-        }
+
+router.get("/allBlog", (req, res, next) => {
+  Blog.find().then ( blog => {
+    if(blog) {
+      res.status(200).json(blog);
+    } else {
+      res.status(404).json("Blog not found");
+    }
+  });
+});
+
+router.post("/createBlog", checkAuth, (req, res, next) => {
+  const blog = new Blog ({
+    title: req.body.title,
+    image: req.body.image,
+    author: req.body.author,
+    body: req.body.body,
+    authorId: req.body.authorId
+  });
+  console.log(blog);
+  blog.save().then( result => {
+    res.status(201).json({
+      message: "Blog Created",
+      result: result
     });
-});
-
-//NEW
-app.get("/blogs/new", function(req, res){
-       res.render("new");
-});
-
-//CREATE
-app.post("/blogs",function(req, res){
-
-    Blog.create(req.body.blog, function(err, newBlog){
-        if(err){
-            res.render("new");
-        } else {
-            res.redirect("/blogs");
-        }
-
+  }).catch(err => {
+    res.status(500).json({
+      error: err
     });
+  });
 });
 
-//SHOW
-app.get("/blogs/:id", function(req, res){
-    Blog.findById(req.params.id, function(err, foundBlog){
-        if(err){
-            res.redirect("/blogs");
-        } else {
-            res.render("show", {blog: foundBlog});
-        }
-    });
-});
-
-//EDIT
-app.get("/blogs/:id/edit", function(req, res){
-    Blog.findById(req.params.id, function(err, foundBlog){
-        if(err){
-            res.redirect("/blogs");
-        } else {
-            res.render("edit", {blog: foundBlog});
-        }
-
-    });
-});
-
-//UPDATE
-app.put("/blogs/:id", function(req,res){
-        Blog.findById(req.params.id, req.body.blog, function(err, updatedBlog){
-            if(err){
-                res.redirect("/blogs");
-            } else {
-                res.redirect("/blogs/" + req.params.id);
-            }
-        });
-});
-
-//DELETE
-app.delete("/blogs/:id",function(req, res){
-   Blog.findByIdAndRemove(req.params.id, function(err){
-       if(err){
-           res.redirect("/blogs");
-       } else {
-           res.redirect("/blogs");
-       }
-   });
-
-});
-
-
-app.listen(process.env.PORT, process.env.IP,function(){
-    console.log("SERVER IS RUNNING!");
-});
+module.exports = router;
