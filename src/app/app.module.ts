@@ -37,6 +37,10 @@ import { getAuthServiceConfigs } from './socialLoginConfig';
 import { CreateComponent } from './create/create.component';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { SliderModule } from 'angular-image-slider';
+import { MainOneComponent } from './desktop/home/main-one/main-one.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { TruncatePipe } from './pipes/truncate';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +64,8 @@ import { SliderModule } from 'angular-image-slider';
     EditProfileComponent,
     UserEditMobileComponent,
     CreateComponent,
+    MainOneComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
@@ -83,7 +89,8 @@ import { SliderModule } from 'angular-image-slider';
     HttpClientModule,
     SocialLoginModule,
     RichTextEditorAllModule,
-    SliderModule
+    SliderModule,
+    NgbModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   {provide: AuthServiceConfig, useFactory: getAuthServiceConfigs}],

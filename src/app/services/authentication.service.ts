@@ -56,7 +56,6 @@ login(email: string, password: string): Promise<any> {
         this.authStatusListener.next(true);
         this.user = helper.decodeToken(token);
         this.saveAuthData(token, this.user.exp);
-        this.setAuthTimer(this.user.exp);
 
         console.log(this.user.exp);
         this.id = this.user.userId;
@@ -69,12 +68,7 @@ login(email: string, password: string): Promise<any> {
 }
 
 
-private setAuthTimer(duration: number) {
-  console.log('Setting timer: ' + duration);
-  this.tokenTimer = setTimeout(() => {
-    this.logout();
-  }, duration * 1000);
-}
+
 
 
 logout() {
@@ -138,7 +132,6 @@ autoAuthUser() {
       this.user = helper.decodeToken(this.token);
       this.id = this.user.userId;
 
-      this.setAuthTimer(expiresIn / 1000);
       this.authStatusListener.next(true);
       console.log(this.id);
     } else {
