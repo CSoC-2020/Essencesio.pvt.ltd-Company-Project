@@ -25,7 +25,9 @@ import { LoginMobileComponent } from './app-header-mobile/login-mobile/login-mob
 import { EmailLoginMobileComponent } from './app-header-mobile/login-mobile/email-login-mobile/email-login-mobile.component';
 import { UserProfileComponent } from './desktop/user-profile/user-profile.component';
 import { UserInfoComponent } from './desktop/user-profile/user-info/user-info.component';
+import { HomeMobileComponent } from './app-header-mobile/home-mobile/home-mobile.component';
 import { HttpClientModule, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import { UserProfileMobileComponent } from './app-header-mobile/user-profile-mobile/user-profile-mobile.component';
 import { UserCredentialsComponent } from './app-header-mobile/user-profile-mobile/user-info/user-credentials/user-credentials.component';
 import { UserInformationComponent } from './app-header-mobile/user-profile-mobile/user-info/user-information/user-information.component';
@@ -56,6 +58,7 @@ import { TruncatePipe } from './pipes/truncate';
     LoginMobileComponent,
     EmailLoginMobileComponent,
     UserProfileComponent,
+    HomeMobileComponent,
     UserInfoComponent,
     UserProfileComponent,
     UserProfileMobileComponent,
@@ -65,7 +68,7 @@ import { TruncatePipe } from './pipes/truncate';
     UserEditMobileComponent,
     CreateComponent,
     MainOneComponent,
-    TruncatePipe
+    TruncatePipe,
   ],
   imports: [
     BrowserModule,

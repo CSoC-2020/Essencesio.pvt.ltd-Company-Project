@@ -14,6 +14,7 @@ import { UserInformationComponent } from './app-header-mobile/user-profile-mobil
 import { EditProfileComponent } from './desktop/user-profile/edit-profile/edit-profile.component';
 import { UserEditMobileComponent } from './app-header-mobile/user-profile-mobile/user-edit-mobile/user-edit-mobile.component';
 import { CreateComponent } from './create/create.component';
+import { HomeMobileComponent } from './app-header-mobile/home-mobile/home-mobile.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path: 'user/edit', component: EditProfileComponent, pathMatch: 'full', children:
   [{path: '', component: UserInfoComponent, outlet: 'user-info'}]},
   {path: 'mobile/user/edit', component: UserEditMobileComponent, pathMatch: 'full'},
-  {path: 'create', component: CreateComponent, pathMatch: 'full'}
+  {path: 'create', component: CreateComponent, pathMatch: 'full'},
+  {path: 'mobile/home', component: HomeMobileComponent, pathMatch: 'full'}
 
 ];
 

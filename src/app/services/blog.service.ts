@@ -33,4 +33,11 @@ export class BlogService {
     );
 
   }
+  getBlogs() {
+    this.http.get('http://localhost:3000/api/blog/allBlog').subscribe (
+      responce => {
+        console.log(responce);
+      }
+    );
+  }
 }

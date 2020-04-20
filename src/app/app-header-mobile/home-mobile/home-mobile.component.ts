@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
-  selector: 'app-main-one',
-  templateUrl: './main-one.component.html',
-  styleUrls: ['./main-one.component.css']
+  selector: 'app-home-mobile',
+  templateUrl: './home-mobile.component.html',
+  styleUrls: ['./home-mobile.component.css']
 })
-export class MainOneComponent implements OnInit {
+export class HomeMobileComponent implements OnInit {
   blogBody = 'If you guys have been following me for a while, you know jeans are one of my favorite things to wear. I’m always on the search for the perfect-fitting pair of jeans, and I’ve got a few go-to trust-worthy brands. Additional Text to be truncated. If you guys have been following me for a while, you know jeans are one of my favorite things to wear. I’m always on the search for the perfect-fitting pair of jeans, and I’ve got a few go-to trust-worthy brands. Additional Text to be truncated'
 
-  constructor(public blogservice: BlogService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.blogservice.getBlogs();
   }
 
 }
