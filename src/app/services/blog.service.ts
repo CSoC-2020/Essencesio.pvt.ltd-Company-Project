@@ -11,6 +11,7 @@ import { UserDataService } from './user-data.service';
   providedIn: 'root'
 })
 export class BlogService {
+  selectBlog: any;
 
   constructor(private http: HttpClient,
               private router: Router, private userService: UserDataService, private authService: AuthenticationService) { }
@@ -37,6 +38,7 @@ export class BlogService {
     this.http.get('http://localhost:3000/api/blog/allBlog').subscribe (
       responce => {
         console.log(responce);
+        this.selectBlog = responce;
       }
     );
   }

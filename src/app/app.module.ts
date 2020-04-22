@@ -42,6 +42,7 @@ import { SliderModule } from 'angular-image-slider';
 import { MainOneComponent } from './desktop/home/main-one/main-one.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TruncatePipe } from './pipes/truncate';
+import { BlogComponent } from './desktop/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { TruncatePipe } from './pipes/truncate';
     CreateComponent,
     MainOneComponent,
     TruncatePipe,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,6 @@ export class MainOneComponent implements OnInit {
   constructor(public blogservice: BlogService) { }
 
   ngOnInit() {
-    this.blogservice.getBlogs();
   }
 
 }
