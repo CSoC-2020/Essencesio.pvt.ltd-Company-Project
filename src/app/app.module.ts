@@ -43,6 +43,7 @@ import { MainOneComponent } from './desktop/home/main-one/main-one.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TruncatePipe } from './pipes/truncate';
 import { BlogComponent } from './desktop/blog/blog.component';
+import { BlogMobileComponent } from './app-header-mobile/blog-mobile/blog-mobile.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { BlogComponent } from './desktop/blog/blog.component';
     MainOneComponent,
     TruncatePipe,
     BlogComponent,
+    BlogMobileComponent,
   ],
   imports: [
     BrowserModule,
