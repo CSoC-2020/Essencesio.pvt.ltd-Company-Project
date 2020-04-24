@@ -17,6 +17,7 @@ import { CreateComponent } from './create/create.component';
 import { HomeMobileComponent } from './app-header-mobile/home-mobile/home-mobile.component';
 import { BlogComponent } from './desktop/blog/blog.component';
 import { BlogMobileComponent } from './app-header-mobile/blog-mobile/blog-mobile.component';
+import { FeedComponent } from './feed/feed.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path: 'create', component: CreateComponent, pathMatch: 'full'},
   {path: 'mobile/home', component: HomeMobileComponent, pathMatch: 'full'},
   {path: 'blog', component: BlogComponent},
-  {path: 'mobile/blog', component: BlogMobileComponent}
+  {path: 'mobile/blog', component: BlogMobileComponent},
+  {path: 'feed', component: FeedComponent}
 
 ];
 
