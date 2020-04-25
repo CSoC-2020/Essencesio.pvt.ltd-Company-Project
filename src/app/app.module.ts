@@ -45,6 +45,7 @@ import { TruncatePipe } from './pipes/truncate';
 import { BlogComponent } from './desktop/blog/blog.component';
 import { BlogMobileComponent } from './app-header-mobile/blog-mobile/blog-mobile.component';
 import { FeedComponent } from './feed/feed.component';
+import { FeedMobileComponent } from './feed/feed-mobile/feed-mobile.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { FeedComponent } from './feed/feed.component';
     BlogComponent,
     BlogMobileComponent,
     FeedComponent,
+    FeedMobileComponent,
   ],
   imports: [
     BrowserModule,

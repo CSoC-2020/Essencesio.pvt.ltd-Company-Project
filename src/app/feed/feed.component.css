@@ -20,6 +20,8 @@
 }
 .date {
   font-family: Regular;
+  font-size: 20px;
+  color: #5D5D5D;
 }
 .blogTitle {
   font-family: Regular;
@@ -57,4 +59,30 @@
   font-size: 25px;
   /* transform: translateX(-20px); */
   margin-top: 20px;
+  }
+  @media screen and (max-width: 600px) {
+    .Name {
+      font-size: 15px;
+    }
+    .date {
+      font-size: 15px;
+
+    }
+    .head {
+      font-size: 15px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+
+    }
+    .ReadNow {
+      font-size: 15px;
+
+    }
+    .description {
+      font-size: 15px;
+
+    }
+    content {
+      font-size: 10px;
+    }
   }
