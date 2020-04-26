@@ -46,6 +46,7 @@ import { BlogComponent } from './desktop/blog/blog.component';
 import { BlogMobileComponent } from './app-header-mobile/blog-mobile/blog-mobile.component';
 import { FeedComponent } from './feed/feed.component';
 import { FeedMobileComponent } from './feed/feed-mobile/feed-mobile.component';
+import { SectionMenuComponent } from './desktop/section-menu/section-menu.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { FeedMobileComponent } from './feed/feed-mobile/feed-mobile.component';
     BlogMobileComponent,
     FeedComponent,
     FeedMobileComponent,
+    SectionMenuComponent,
   ],
   imports: [
     BrowserModule,
