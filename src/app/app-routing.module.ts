@@ -20,6 +20,7 @@ import { BlogMobileComponent } from './app-header-mobile/blog-mobile/blog-mobile
 import { FeedComponent } from './feed/feed.component';
 import { FeedMobileComponent } from './feed/feed-mobile/feed-mobile.component';
 import { SectionMenuComponent } from './desktop/section-menu/section-menu.component';
+import { SectionMenuMobileComponent } from './app-header-mobile/section-menu-mobile/section-menu-mobile.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -40,7 +41,8 @@ const routes: Routes = [
   {path: 'mobile/blog', component: BlogMobileComponent},
   {path: 'feed', component: FeedComponent},
   {path: 'mobile/feed', component: FeedMobileComponent},
-  {path: 'section', component: SectionMenuComponent}
+  {path: 'section', component: SectionMenuComponent},
+  {path: 'mobile/section', component: SectionMenuMobileComponent}
 
 ];
 
